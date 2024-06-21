@@ -215,7 +215,7 @@ Menjalankan Container
 
    &nbsp;
 
-   ### Konfigurasi OpenVPN
+   ### 🔹 Konfigurasi OpenVPN
    Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
    <pre>
    ....:/etc/openvpn/easy-rsa# cp pki/ca.crt /etc/openvpn/
