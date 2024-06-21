@@ -47,7 +47,6 @@
 
 <pre>
 ❯ vim docker-compose.yml
-
    . . .
    version: '3.8'
    services:
