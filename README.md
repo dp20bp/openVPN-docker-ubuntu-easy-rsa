@@ -345,8 +345,6 @@
    </pre>
    Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, Anda perlu memperbarui sertifikat tersebut.
 
-   &nbsp;
-
    **Contoh File Konfigurasi Server OpenVPN** <br />
    Buat file konfigurasi server OpenVPN (/etc/openvpn/server.conf) jika belum ada:
    <pre>
