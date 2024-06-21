@@ -186,7 +186,7 @@ Menjalankan Container
 
       DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem
    </pre>
-   Periksa kembali perubahan isi direktori.
+   Periksa kembali **perubahan** isi direktori.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>ls -lah</mark>
       lrwxrwxrwx 1 root root   27 Jun 21 09:47 easyrsa -> /usr/share/easy-rsa/easyrsa
