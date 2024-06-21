@@ -188,13 +188,52 @@ Menjalankan Container
    </pre>
    Periksa kembali perubahan isi direktori.
    <pre>
-   ....:/etc/openvpn/easy-rsa# <mark>./ls -lah</mark>
-      lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
+   ....:/etc/openvpn/easy-rsa# <mark>ls -lah</mark>
+      lrwxrwxrwx 1 root root   27 Jun 21 09:47 easyrsa -> /usr/share/easy-rsa/easyrsa
       -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
-      -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
-      drwx------ 8 root root 4.0K Jun 21 07:51 pki
-      -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
-      lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types      
+      -rw-r--r-- 1 root root 4.6K Jun 21 09:47 openssl-easyrsa.cnf
+      drwx------ 8 root root 4.0K Jun 21 10:16 pki
+      -rw-r--r-- 1 root root 8.4K Jun 21 09:47 vars
+      lrwxrwxrwx 1 root root   30 Jun 21 09:47 x509-types -> /usr/share/easy-rsa/x509-types   
+
+   ....:/etc/openvpn/easy-rsa# <mark>tree -L 3 -a ./</mark>
+      ./
+      |-- easyrsa -> /usr/share/easy-rsa/easyrsa
+      |-- init-easyrsa.sh
+      |-- openssl-easyrsa.cnf
+      |-- pki
+      |   |-- .rnd
+      |   |-- ca.crt
+      |   |-- certs_by_serial
+      |   |   `-- 3F7D22AF06E676A17433EB24C2647247.pem
+      |   |-- dh.pem
+      |   |-- extensions.temp
+      |   |-- index.txt
+      |   |-- index.txt.attr
+      |   |-- index.txt.old
+      |   |-- issued
+      |   |   `-- server.crt
+      |   |-- openssl-easyrsa.cnf
+      |   |-- private
+      |   |   |-- ca.key
+      |   |   `-- server.key
+      |   |-- renewed
+      |   |   |-- certs_by_serial
+      |   |   |-- private_by_serial
+      |   |   `-- reqs_by_serial
+      |   |-- reqs
+      |   |   `-- server.req
+      |   |-- revoked
+      |   |   |-- certs_by_serial
+      |   |   |-- private_by_serial
+      |   |   `-- reqs_by_serial
+      |   |-- safessl-easyrsa.cnf
+      |   |-- serial
+      |   `-- serial.old
+      |-- vars
+      `-- x509-types -> /usr/share/easy-rsa/x509-types
+
+      14 directories, 20 files
    </pre>
 
    &nbsp;
