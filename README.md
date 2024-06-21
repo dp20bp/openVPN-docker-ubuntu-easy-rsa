@@ -124,7 +124,8 @@
         CONTAINER ID   IMAGE                                    COMMAND   CREATED          STATUS          PORTS                    NAMES
         8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
    </pre>
-   ### 🔹 Masuk ke dalam Container
+   
+   🔹 Masuk ke dalam Container
    <pre>
    ❯ docker exec -it openvpn-test bash
    </pre>
