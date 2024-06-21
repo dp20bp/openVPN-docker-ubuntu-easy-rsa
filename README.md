@@ -255,6 +255,18 @@ Menjalankan Container
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/issued/server.crt /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/private/server.key /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/dh.pem /etc/openvpn/</mark>
+
+   ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
+      /etc/openvpn
+      |-- ca.crt
+      |-- client
+      |-- dh.pem
+      |-- server
+      |-- server.crt
+      |-- server.key
+      `-- update-resolv-conf
+
+      2 directories, 5 files   
    </pre>
    Periksa Sertifikat Server.<br />
    Gunakan perintah openssl untuk memeriksa tanggal kedaluwarsa sertifikat server. Lokasi sertifikat biasanya berada di /etc/openvpn atau direktori yang Anda tentukan dalam konfigurasi.
