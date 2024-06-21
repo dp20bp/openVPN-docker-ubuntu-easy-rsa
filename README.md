@@ -91,6 +91,8 @@ Menjalankan Container
       |-- client
       |-- server
       `-- update-resolv-conf
+
+      2 directories, 1 file   
    </pre>
    ⌘ Jalankan Skrip.
    <pre>
@@ -234,6 +236,14 @@ Menjalankan Container
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
       14 directories, 20 files
+
+   ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
+      /etc/openvpn
+      |-- client
+      |-- server
+      `-- update-resolv-conf
+
+      2 directories, 1 file   
    </pre>
 
    &nbsp;
