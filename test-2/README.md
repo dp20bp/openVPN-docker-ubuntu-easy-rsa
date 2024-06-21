@@ -161,7 +161,7 @@
 
     remote 192.168.100.225 1194 udp
 
-    <key>
+    &lt;key&gt;
     -----BEGIN ENCRYPTED PRIVATE KEY-----
     MIIFHDBOBgkqhkiG9w0BBQ0wQTApBgkqhkiG9w0BBQwwHAQI2NSmcALx020CAggA
     MAwGCCqGSIb3DQIJBQAwFAYIKoZIhvcNAwcECNVmc/V9ff0TBIIEyBF7ea49/BCf
@@ -192,8 +192,8 @@
     ld+G68c7D56NHcBkmDCHYZEdHw7qmsB38wcuQfDTijRc80KuoidBEU5ZcI/CxG1f
     fWnVjRZkjvn6IL2qAzo1tA==
     -----END ENCRYPTED PRIVATE KEY-----
-    </key>
-    <cert>
+    &lt;/key&gt;
+    &lt;cert&gt;
     -----BEGIN CERTIFICATE-----
     MIIDbjCCAlagAwIBAgIQT1XWMpAvDMNp52bVdJhs7jANBgkqhkiG9w0BAQsFADAh
     MR8wHQYDVQQDDBZwZXJhbmdrYXQtbWFjYm9vay1zYXlhMB4XDTI0MDYyMTIzNDYx
@@ -215,8 +215,8 @@
     TrEeIcLBoijfJSflyIsUGKSrZTaRg13MW4rPh3vsikcYjfukHElmL3DvIqFVW26S
     MCZy2CDLFQwJnZrLbrZ71nWA
     -----END CERTIFICATE-----
-    </cert>
-    <ca>
+    &lt;/cert&gt;
+    &lt;ca&gt;
     -----BEGIN CERTIFICATE-----
     MIIDbDCCAlSgAwIBAgIUROjTbRGU12y128UQVljueEcXUJYwDQYJKoZIhvcNAQEL
     BQAwITEfMB0GA1UEAwwWcGVyYW5na2F0LW1hY2Jvb2stc2F5YTAeFw0yNDA2MjEy
@@ -238,9 +238,9 @@
     2LIzkBBVyyfimCMhsElDYzDNKdb6fsxMnUL398STv0yLYpRSf2d62njuYzUCW14Q
     iir0S0T3SyDhoMY6P3hamg==
     -----END CERTIFICATE-----
-    </ca>
+    &lt;/ca&gt;
     key-direction 1
-    <tls-auth>
+    &lt;tls-auth&gt;
     #
     # 2048 bit OpenVPN static key
     #
@@ -262,7 +262,7 @@
     24fd71dce8d35e515e6d5a4963a95ead
     305e792a3904ab0ae527b23c60d8fc47
     -----END OpenVPN Static key V1-----
-    </tls-auth>
+    &lt;/tls-auth&gt;
 
     redirect-gateway def1
     </pre>
