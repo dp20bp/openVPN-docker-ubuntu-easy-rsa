@@ -2,7 +2,7 @@
 
 &nbsp;
 
-### Langkah : 
+### Langkah-langkah : 
 Menjalankan Container
 1. Buat Skrip init-easyrsa.sh Eksekutabel: <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
