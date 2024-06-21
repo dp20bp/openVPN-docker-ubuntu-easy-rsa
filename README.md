@@ -216,6 +216,7 @@ Menjalankan Container
    &nbsp;
 
    ### Konfigurasi OpenVPN
+   Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
    <pre>
    ....:/etc/openvpn/easy-rsa# cp pki/ca.crt /etc/openvpn/
    ....:/etc/openvpn/easy-rsa# cp pki/issued/server.crt /etc/openvpn/
@@ -235,5 +236,7 @@ Menjalankan Container
    </pre>
    Periksa Sertifikat Client (Opsional)
    <pre>
-   ....:/etc/openvpn/easy-rsa#    
+   ....:/etc/openvpn/easy-rsa# openssl x509 -in /path/to/client.crt -text -noout | grep "Not After"
+         Not After : Jun 21 12:34:56 2025 GMT
    </pre>
+   Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, Anda perlu memperbarui sertifikat tersebut.
