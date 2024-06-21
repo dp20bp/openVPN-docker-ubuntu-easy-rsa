@@ -77,4 +77,36 @@
         ..........................................................................................
         ..........................................................................................
         ..........+...................+.....+.....................................................
+        ............+........+..................+..++*++*++*++*
+        DH parameters of size 2048 created at /etc/openvpn/pki/dh.pem
+
+
+        Using SSL: openssl OpenSSL 1.1.1g  21 Apr 2020
+        Generating a RSA private key
+        ..........................................+++++
+        ......................+++++
+        writing new private key to '/etc/openvpn/pki/easy-rsa-203.pjoeHb/tmp.hpmadh'
+        -----
+        Using configuration from /etc/openvpn/pki/easy-rsa-203.pjoeHb/tmp.CljfDI
+        Enter pass phrase for /etc/openvpn/pki/private/ca.key: <mark>test123</mark>   
+        Check that the request matches the signature
+        Signature ok
+        The Subject's Distinguished Name is as follows
+        commonName            :ASN.1 12:'192.168.100.225'
+        Certificate is to be certified until Sep 24 23:19:56 2026 GMT (825 days)
+
+        Write out database with 1 new entries
+        Data Base Updated
+
+        Using SSL: openssl OpenSSL 1.1.1g  21 Apr 2020
+        Using configuration from /etc/openvpn/pki/easy-rsa-406.dEpAbi/tmp.kMMiEn
+        Enter pass phrase for /etc/openvpn/pki/private/ca.key: <mark>test123</mark>       
+
+        An updated CRL has been created.
+        CRL file: /etc/openvpn/pki/crl.pem
     </pre>
+    Notes : <br />
+    **Passphrase untuk ca.key:** <br />
+    Saat Anda diminta memasukkan passphrase untuk /etc/openvpn/pki/private/ca.key, Anda harus memasukkan passphrase yang sama dengan yang Anda gunakan sebelumnya (yaitu “test123”). File ca.key adalah kunci pribadi untuk otoritas sertifikat (CA) yang akan digunakan untuk menandatangani sertifikat lain.<br />
+    **CRL (Certificate Revocation List):** <br />
+    Pesan terakhir menunjukkan bahwa CRL telah diperbarui. CRL adalah daftar yang berisi sertifikat yang dicabut (revoke) oleh CA. Ini penting untuk mengamankan jaringan dan memastikan bahwa sertifikat yang tidak valid tidak dapat digunakan.
