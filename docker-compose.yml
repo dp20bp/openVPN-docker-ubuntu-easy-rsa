@@ -4,7 +4,7 @@ services:
     build: .
     container_name: openvpn-test
     # volumes:
-    #   - ./openvpn-data:/etc/openvpn
+    #   - /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/openvpn-data:/etc/openvpn
     cap_add:
       - NET_ADMIN
     ports:
