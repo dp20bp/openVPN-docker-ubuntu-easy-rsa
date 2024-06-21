@@ -68,11 +68,20 @@ Menjalankan Container
    ....:/etc/openvpn/easy-rsa# <mark>cd /etc/openvpn/easy-rsa</mark>
 
    ....:/etc/openvpn/easy-rsa# <mark>ls -lah</mark>
-      lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
+      lrwxrwxrwx 1 root root   27 Jun 21 09:47 easyrsa -> /usr/share/easy-rsa/easyrsa
       -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
-      -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
-      -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
-      lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types
+      -rw-r--r-- 1 root root 4.6K Jun 21 09:47 openssl-easyrsa.cnf
+      -rw-r--r-- 1 root root 8.4K Jun 21 09:47 vars
+      lrwxrwxrwx 1 root root   30 Jun 21 09:47 x509-types -> /usr/share/easy-rsa/x509-types
+
+   ....:/etc/openvpn/easy-rsa# <mark>tree -L 3 -a ./</mark>
+      ./
+      |-- easyrsa -> /usr/share/easy-rsa/easyrsa
+      |-- init-easyrsa.sh
+      |-- openssl-easyrsa.cnf
+      |-- vars
+      `-- x509-types -> /usr/share/easy-rsa/x509-types
+
    </pre>
    ⌘ Jalankan Skrip.
    <pre>
