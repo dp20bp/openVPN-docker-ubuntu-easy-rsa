@@ -156,6 +156,7 @@
 
       2 directories, 1 file   
    </pre>
+   
    🔹 Jalankan script.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>./init-easyrsa.sh</mark>
