@@ -1,6 +1,6 @@
 1.  Buat Volume Container:
     <pre>
-    docker run --name ovpn-data -v /etc/openvpn busybox
+    ❯ docker run --name ovpn-data -v /etc/openvpn busybox
     </pre>
     <pre>
     ❯ docker ps -a
@@ -10,4 +10,12 @@
     ❯ docker volume ls
         DRIVER    VOLUME NAME
         local     1a9b669800cc1c67423738fec3e32850fb2bab46d55134d6ecb747747a3ad8f7        
+    </pre>
+
+2.  Inisialisasi Volume Container: <br />
+    Inisialisasi volume container ovpn-data yang akan menyimpan file konfigurasi dan sertifikat:
+    <pre>
+    ❯ docker run --volumes-from ovpn-data --rm kylemanna/openvpn ovpn_genconfig -u udp://192.168.100.225
+
+    ❯ docker run --volumes-from ovpn-data --rm -it kylemanna/openvpn ovpn_initpki
     </pre>
