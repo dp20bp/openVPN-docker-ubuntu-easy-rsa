@@ -159,4 +159,7 @@ Menjalankan Container
       Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
       Generating DH parameters, 2048 bit long safe prime, generator 2
       This is going to take a long time      
+      ...........................................+.........................................................................+.......+.............+......................................................................................................................................................++*++*++*++*
+
+      DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem      
    </pre>
