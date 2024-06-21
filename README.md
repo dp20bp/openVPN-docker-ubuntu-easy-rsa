@@ -64,16 +64,22 @@ Menjalankan Container
    ❯ docker ps -a
         CONTAINER ID   IMAGE                                    COMMAND   CREATED          STATUS          PORTS                    NAMES
         8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
-
+   </pre>
+   <pre>
    ❯ docker exec -it openvpn-test bash
-     .../easy-rsa# <mark>cd /etc/openvpn/easy-rsa</mark>
-     .../easy-rsa# <mark>ls -lah</mark>
+   </pre>
+   <pre>
+   ....:/etc/openvpn/easy-rsa# <mark>cd /etc/openvpn/easy-rsa</mark>
+
+   ....:/etc/openvpn/easy-rsa# <mark>ls -lah</mark>
       lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
       -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
       -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
       -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
       lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types
-     .../easy-rsa# <mark>./init-easyrsa.sh</mark>
+   </pre>
+   <pre>
+   ....:/etc/openvpn/easy-rsa# <mark>./init-easyrsa.sh</mark>
       Note: using Easy-RSA configuration from: ./vars
 
       init-pki complete; you may now create a CA or requests.
@@ -123,11 +129,9 @@ Menjalankan Container
       req: /etc/openvpn/easy-rsa/pki/reqs/server.req
       key: /etc/openvpn/easy-rsa/pki/private/server.key
 
-
       Note: using Easy-RSA configuration from: ./vars
 
       Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
-
 
       You are about to sign the following certificate.
       Please check over the details shown below for accuracy. Note that this request
@@ -138,7 +142,6 @@ Menjalankan Container
 
       subject=
          commonName                = <mark>hostest</mark>
-
 
       Type the word 'yes' to continue, or any other input to abort.
       Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/safessl-easyrsa.cnf
@@ -153,26 +156,38 @@ Menjalankan Container
 
       Certificate created at: /etc/openvpn/easy-rsa/pki/issued/server.crt
 
-
       Note: using Easy-RSA configuration from: ./vars
 
       Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
       Generating DH parameters, 2048 bit long safe prime, generator 2
       This is going to take a long time      
-      ...........................................+.........................................................................+.......+.............+......................................................................................................................................................++*++*++*++*
+      ...........................................+....+.......+.............
+      +.....................................................................
+      +.....................................................................
+      . . .
+      +.....................................................................
+      +.....................................................................
+      ..........................................................++*++*++*++*
 
       DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem
-
-     .../easy-rsa# <mark>./ls -lah</mark>
+   </pre>
+   <pre>
+   ....:/etc/openvpn/easy-rsa# <mark>./ls -lah</mark>
       lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
       -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
       -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
       drwx------ 8 root root 4.0K Jun 21 07:51 pki
       -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
       lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types      
+   </pre>
 
+   &nbsp;
 
-     .../easy-rsa# <mark>./easyrsa gen-req client nopass</mark>
+   &nbsp;
+
+   <pre>
+     # Buat permintaan sertifikat dan kunci server tanpa password  
+     ....:/etc/openvpn/easy-rsa# <mark>./easyrsa gen-req client nopass</mark>
 
       Note: using Easy-RSA configuration from: ./vars
 
@@ -193,5 +208,16 @@ Menjalankan Container
 
       Keypair and certificate request completed. Your files are:
       req: /etc/openvpn/easy-rsa/pki/reqs/client.req
-      key: /etc/openvpn/easy-rsa/pki/private/client.key      
+      key: /etc/openvpn/easy-rsa/pki/private/client.key     
+   </pre>
+
+   &nbsp;
+
+   &nbsp;
+
+   <pre>
+   ....:/etc/openvpn/easy-rsa# cp pki/ca.crt /etc/openvpn/
+   ....:/etc/openvpn/easy-rsa# cp pki/issued/server.crt /etc/openvpn/
+   ....:/etc/openvpn/easy-rsa# cp pki/private/server.key /etc/openvpn/
+   ....:/etc/openvpn/easy-rsa# cp pki/dh.pem /etc/openvpn/
    </pre>
