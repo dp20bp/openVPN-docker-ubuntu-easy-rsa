@@ -410,7 +410,19 @@
 
    &nbsp;
 
-5. Persiapkan File Konfigurasi Client. <br />
+5. Verifikasi Port Forwarding di Host. <br />
+   Pastikan port 1194 pada host (192.168.100.225) diteruskan ke port 1194 di container.
+   <pre>
+   ❯ netstat -tuln | grep 1194
+   </pre>
+   Anda harus melihat sesuatu seperti ini jika port 1194 di-host mendengarkan:
+   <pre>
+      udp        0      0 0.0.0.0:1194            0.0.0.0:*
+   </pre>
+
+   &nbsp;
+
+6. Persiapkan File Konfigurasi Client. <br />
    Pastikan Anda memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
    <pre>
    ❯ vim client.ovpn
@@ -450,9 +462,11 @@
 
    &nbsp;
 
-6. Verifikasi Koneksi. <br />
+7. Verifikasi Koneksi. <br />
    Setelah menjalankan perintah di atas, OpenVPN akan mencoba untuk terhubung ke server menggunakan konfigurasi yang diberikan dalam file client.ovpn. Pada output terminal, Anda akan melihat informasi mengenai status koneksi, termasuk jika koneksi berhasil atau jika terdapat masalah yang perlu diperbaiki.
 
+   &nbsp;
 
+   &nbsp;
 
 
