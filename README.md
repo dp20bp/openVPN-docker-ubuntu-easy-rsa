@@ -2,7 +2,23 @@
 
 &nbsp;
 
-### 🏁 Langkah-langkah : 
+### 🏁 Langkah-langkah :
+
+<pre>
+❯ vim Dockerfile
+</pre>
+
+&nbsp;
+
+<pre>
+❯ vim init-easyrsa.sh
+</pre>
+
+&nbsp;
+
+<pre>
+❯ vim docker-compose.yml
+</pre>
 
 1. Buat Skrip init-easyrsa.sh eksekutabel: <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
