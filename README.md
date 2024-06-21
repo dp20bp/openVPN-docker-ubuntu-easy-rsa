@@ -4,19 +4,13 @@
 
 ### Langkah : 
 Menjalankan Container
-1. Buat Direktori untuk Data OpenVPN: <br />
-   Buat direktori untuk menyimpan data OpenVPN:
-   <pre>
-   ❯ mkdir openvpn-data
-   </pre>
-
-2. Buat Skrip init-easyrsa.sh Eksekutabel: <br />
+1. Buat Skrip init-easyrsa.sh Eksekutabel: <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
    <pre>
    ❯ chmod +x init-easyrsa.sh
    </pre>
 
-3. Bangun dan Jalankan Container: <br />
+2. Bangun dan Jalankan Container: <br />
    Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
    ❯ docker-compose up --build
@@ -63,3 +57,21 @@ Menjalankan Container
    <div align="center">
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
+
+3. Masuk ke Container dengan membuka dan dilakukan pada terminal baru:
+   Setelah container berjalan, Anda bisa masuk ke dalam container untuk menjalankan skrip inisialisasi:
+   <pre>
+   ❯ docker ps -a
+        CONTAINER ID   IMAGE                                    COMMAND   CREATED          STATUS          PORTS                    NAMES
+        8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
+
+   ❯ docker exec -it openvpn-test bash
+     .../easy-rsa# cd /etc/openvpn/easy-rsa
+     .../easy-rsa# ls -lah
+      lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
+      -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
+      -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
+      -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
+      lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types
+     .../easy-rsa# ./init-easyrsa.sh
+   </pre>

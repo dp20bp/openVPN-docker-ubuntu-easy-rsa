@@ -14,7 +14,10 @@ RUN make-cadir /etc/openvpn/easy-rsa
 WORKDIR /etc/openvpn/easy-rsa
 
 # Salin skrip inisialisasi PKI
-COPY ./init-easyrsa.sh /etc/openvpn/easy-rsa/
+COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
+
+# Tampilkan isi direktori untuk verifikasi
+RUN ls -l /etc/openvpn/easy-rsa/
 
 # Set perintah default untuk kontainer ini
 CMD ["bash"]

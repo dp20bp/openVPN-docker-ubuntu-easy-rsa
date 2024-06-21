@@ -3,8 +3,8 @@ services:
   openvpn:
     build: .
     container_name: openvpn-test
-    volumes:
-      - ./openvpn-data:/etc/openvpn
+    # volumes:
+    #   - ./openvpn-data:/etc/openvpn
     cap_add:
       - NET_ADMIN
     ports:
