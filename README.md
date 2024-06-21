@@ -174,6 +174,7 @@ Menjalankan Container
 
       DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem
    </pre>
+   Periksa kembali perubahan isi direktori.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>./ls -lah</mark>
       lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
@@ -189,10 +190,10 @@ Menjalankan Container
    ### 🔹 Konfigurasi OpenVPN
    Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
    <pre>
-   ....:/etc/openvpn/easy-rsa# cp pki/ca.crt /etc/openvpn/
-   ....:/etc/openvpn/easy-rsa# cp pki/issued/server.crt /etc/openvpn/
-   ....:/etc/openvpn/easy-rsa# cp pki/private/server.key /etc/openvpn/
-   ....:/etc/openvpn/easy-rsa# cp pki/dh.pem /etc/openvpn/
+   ....:/etc/openvpn/easy-rsa# <mark>cp pki/ca.crt /etc/openvpn/</mark>
+   ....:/etc/openvpn/easy-rsa# <mark>cp pki/issued/server.crt /etc/openvpn/</mark>
+   ....:/etc/openvpn/easy-rsa# <mark>cp pki/private/server.key /etc/openvpn/</mark>
+   ....:/etc/openvpn/easy-rsa# <mark>cp pki/dh.pem /etc/openvpn/</mark>
    </pre>
    Periksa Sertifikat Server.<br />
    Gunakan perintah openssl untuk memeriksa tanggal kedaluwarsa sertifikat server. Lokasi sertifikat biasanya berada di /etc/openvpn atau direktori yang Anda tentukan dalam konfigurasi.
