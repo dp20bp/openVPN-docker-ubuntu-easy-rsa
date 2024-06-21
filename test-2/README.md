@@ -106,7 +106,7 @@
         CRL file: /etc/openvpn/pki/crl.pem
     </pre>
     Notes : <br />
-    **Passphrase untuk ca.key:** <br />
+    - **Passphrase untuk ca.key:** <br />
     Saat Anda diminta memasukkan passphrase untuk /etc/openvpn/pki/private/ca.key, Anda harus memasukkan passphrase yang sama dengan yang Anda gunakan sebelumnya (yaitu “test123”). File ca.key adalah kunci pribadi untuk otoritas sertifikat (CA) yang akan digunakan untuk menandatangani sertifikat lain.<br />
-    **CRL (Certificate Revocation List):** <br />
+    - **CRL (Certificate Revocation List):** <br />
     Pesan terakhir menunjukkan bahwa CRL telah diperbarui. CRL adalah daftar yang berisi sertifikat yang dicabut (revoke) oleh CA. Ini penting untuk mengamankan jaringan dan memastikan bahwa sertifikat yang tidak valid tidak dapat digunakan.
