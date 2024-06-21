@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 # Install OpenVPN dan easy-rsa
 RUN apt-get update && \
-    apt-get install -y openvpn easy-rsa tree && \
+    apt-get install -y openvpn easy-rsa tree vim && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

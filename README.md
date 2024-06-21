@@ -123,7 +123,7 @@ Menjalankan Container
       For some fields there will be a default value,
       If you enter '.', the field will be left blank.
       -----
-      Common Name (eg: your user, host, or server name) [server]:hostest
+      Common Name (eg: your user, host, or server name) [server]:MY-LOCALHOST-TEST
 
       Keypair and certificate request completed. Your files are:
       req: /etc/openvpn/easy-rsa/pki/reqs/server.req
@@ -141,14 +141,14 @@ Menjalankan Container
       Request subject, to be signed as a server certificate for 1080 days:
 
       subject=
-         commonName                = <mark>hostest</mark>
+         commonName                = <mark>MY-LOCALHOST-TEST</mark>
 
       Type the word 'yes' to continue, or any other input to abort.
       Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/safessl-easyrsa.cnf
       Check that the request matches the signature
       Signature ok
       The Subject's Distinguished Name is as follows
-      commonName            :ASN.1 12:'hostest'
+      commonName            :ASN.1 12:'MY-LOCALHOST-TEST'
       Certificate is to be certified until Jun  6 07:51:00 2027 GMT (1080 days)
 
       Write out database with 1 new entries
@@ -183,38 +183,6 @@ Menjalankan Container
 
    &nbsp;
 
-   &nbsp;
-
-   <pre>
-     # Buat permintaan sertifikat dan kunci server tanpa password  
-     ....:/etc/openvpn/easy-rsa# <mark>./easyrsa gen-req client nopass</mark>
-
-      Note: using Easy-RSA configuration from: ./vars
-
-      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
-      Generating a RSA private key
-      .............................+++++
-      .............................+++++
-      writing new private key to '/etc/openvpn/easy-rsa/pki/private/client.key.xAQZwdamhI'
-      -----
-      You are about to be asked to enter information that will be incorporated
-      into your certificate request.
-      What you are about to enter is what is called a Distinguished Name or a DN.
-      There are quite a few fields but you can leave some blank
-      For some fields there will be a default value,
-      If you enter '.', the field will be left blank.
-      -----
-      Common Name (eg: your user, host, or server name) [client]:<mark>hostest</mark>
-
-      Keypair and certificate request completed. Your files are:
-      req: /etc/openvpn/easy-rsa/pki/reqs/client.req
-      key: /etc/openvpn/easy-rsa/pki/private/client.key     
-   </pre>
-
-   &nbsp;
-
-   &nbsp;
-
    ### 🔹 Konfigurasi OpenVPN
    Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
    <pre>
@@ -240,3 +208,8 @@ Menjalankan Container
          Not After : Jun 21 12:34:56 2025 GMT
    </pre>
    Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, Anda perlu memperbarui sertifikat tersebut.
+
+   &nbsp;
+
+   **Contoh File Konfigurasi Server OpenVPN** <br />
+   Buat file konfigurasi server OpenVPN (/etc/openvpn/server.conf) jika belum ada:
