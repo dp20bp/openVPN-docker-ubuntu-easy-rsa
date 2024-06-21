@@ -295,20 +295,20 @@ Menjalankan Container
          . . .
    </pre>
    ```bash
-      port 1194
-      proto udp
-      dev tun
-      ca /etc/openvpn/ca.crt
-      cert /etc/openvpn/server.crt
-      key /etc/openvpn/server.key
-      dh /etc/openvpn/dh.pem
-      server 10.8.0.0 255.255.255.0
-      ifconfig-pool-persist ipp.txt
-      keepalive 10 120
-      cipher AES-256-CBC
-      persist-key
-      persist-tun
-      status openvpn-status.log
-      log-append /var/log/openvpn.log
-      verb 3
+         port 1194
+         proto udp
+         dev tun
+         ca /etc/openvpn/ca.crt
+         cert /etc/openvpn/server.crt
+         key /etc/openvpn/server.key
+         dh /etc/openvpn/dh.pem
+         server 10.8.0.0 255.255.255.0
+         ifconfig-pool-persist ipp.txt
+         keepalive 10 120
+         cipher AES-256-CBC
+         persist-key
+         persist-tun
+         status openvpn-status.log
+         log-append /var/log/openvpn.log
+         verb 3
    ```
