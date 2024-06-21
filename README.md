@@ -215,6 +215,7 @@ Menjalankan Container
 
    &nbsp;
 
+   ### Konfigurasi OpenVPN
    <pre>
    ....:/etc/openvpn/easy-rsa# cp pki/ca.crt /etc/openvpn/
    ....:/etc/openvpn/easy-rsa# cp pki/issued/server.crt /etc/openvpn/
