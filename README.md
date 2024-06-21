@@ -1,4 +1,4 @@
-# openVPN
+# openVPN & easy-rsa
 
 &nbsp;
 
