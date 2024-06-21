@@ -21,20 +21,50 @@
    COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
 
    CMD ["bash"]
-
 </pre>
 
 &nbsp;
 
 <pre>
 ❯ vim init-easyrsa.sh
+   . . .
+   #!/bin/bash
+
+   ./easyrsa init-pki
+
+   # Buat CA baru tanpa password
+   echo | ./easyrsa build-ca nopass
+
+   # Buat server request dan tanda tangani
+   ./easyrsa gen-req server nopass
+   echo yes | ./easyrsa sign-req server server
+
+   # Buat Diffie-Hellman parameters
+   ./easyrsa gen-dh
 </pre>
 
 &nbsp;
 
 <pre>
 ❯ vim docker-compose.yml
+
+   . . .
+   version: '3.8'
+   services:
+      openvpn:
+        build: .
+        container_name: openvpn-test
+        cap_add:
+          - NET_ADMIN
+        ports:
+          - "1194:1194/udp"
+        stdin_open: true
+        tty: true
 </pre>
+
+&nbsp;
+
+&nbsp;
 
 1. Buat Skrip init-easyrsa.sh eksekutabel: <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
