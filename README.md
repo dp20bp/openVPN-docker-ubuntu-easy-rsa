@@ -312,3 +312,23 @@ Menjalankan Container
          log-append /var/log/openvpn.log
          verb 3
    ```
+
+   &nbsp;
+
+   ### 🔹 Jalankan OpenVPN Server
+   Untuk menjalankan OpenVPN server, gunakan perintah berikut di dalam container:
+   <pre>
+   ....:/etc/openvpn/easy-rsa# <mark>openvpn --config /etc/openvpn/server.conf</mark>
+   </pre>
+
+
+   ### Menyalin Sertifikat dan Kunci ke Mesin Klien
+   Dilakukan pada host atau diluar container.
+   <pre>
+   ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
+   ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
+   ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key   
+   </pre>
+
+
+
