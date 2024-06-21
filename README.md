@@ -417,6 +417,20 @@
       verb 3
    </pre>
 
+   <pre>
+   ❯ tree -L 3 -a -I '.DS_Store|.git|.gitignore|README.md|gambar-petunjuk' ./
+      ./
+      ├── Dockerfile
+      ├── ca.crt
+      ├── client.crt
+      ├── client.key
+      ├── client.ovpn
+      ├── docker-compose.yml
+      └── init-easyrsa.sh
+
+      0 directories, 7 files
+      </pre>
+
    &nbsp;
 
 6. Verifikasi Koneksi. <br />
