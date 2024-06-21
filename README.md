@@ -1,5 +1,7 @@
 # openVPN
 
+&nbsp;
+
 ### Langkah : 
 Menjalankan Container
 1. Buat Direktori untuk Data OpenVPN: <br />
@@ -51,3 +53,13 @@ Menjalankan Container
         Attaching to openvpn-test   
    </pre>
    Jangan tutup terminal ini ketika container berhasil dijalankan.
+
+   <div align="center">
+      <img src="./gambar-petunjuk/ss_docker_desktop_001.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
+   </div>
+
+   &nbsp;
+
+   <div align="center">
+      <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
+   </div>
