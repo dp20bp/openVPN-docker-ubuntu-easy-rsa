@@ -378,6 +378,23 @@
    ....:/etc/openvpn/easy-rsa# <mark>openvpn --config /etc/openvpn/server.conf</mark>
    </pre>
 
+   Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, Anda dapat melakukan beberapa langkah pengujian berikut: <br />
+   Periksa Log OpenVPN
+   <pre>
+   ....:/etc/openvpn/easy-rsa# tail -f /var/log/openvpn.log
+      Fri Jun 21 10:35:52 2024 Diffie-Hellman initialized with 2048 bit key
+      Fri Jun 21 10:35:52 2024 ROUTE_GATEWAY 172.21.0.1/255.255.0.0 IFACE=eth0 HWADDR=02:42:ac:15:00:02
+      Fri Jun 21 10:35:52 2024 ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such file or directory (errno=2)
+      Fri Jun 21 10:35:52 2024 Exiting due to fatal error
+      Fri Jun 21 11:34:01 2024 OpenVPN 2.4.12 aarch64-unknown-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] built on Aug 21 2023
+      Fri Jun 21 11:34:01 2024 library versions: OpenSSL 1.1.1f  31 Mar 2020, LZO 2.10
+      Fri Jun 21 11:34:01 2024 Diffie-Hellman initialized with 2048 bit key
+      Fri Jun 21 11:34:01 2024 ROUTE_GATEWAY 172.21.0.1/255.255.0.0 IFACE=eth0 HWADDR=02:42:ac:15:00:02
+      Fri Jun 21 11:34:01 2024 ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such file or directory (errno=2)
+      Fri Jun 21 11:34:01 2024 Exiting due to fatal error
+   </pre>
+   Periksa apakah ada pesan seperti `Initialization Sequence Completed` yang menunjukkan bahwa OpenVPN telah berhasil memulai dan menyelesaikan proses inisialisasi.
+
    &nbsp;
 
 4. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
