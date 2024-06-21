@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  openvpn:
+    build: .
+    container_name: openvpn-test
+    volumes:
+      - ./openvpn-data:/etc/openvpn
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/udp"
+    stdin_open: true
+    tty: true
