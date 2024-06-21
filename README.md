@@ -321,14 +321,47 @@ Menjalankan Container
    ....:/etc/openvpn/easy-rsa# <mark>openvpn --config /etc/openvpn/server.conf</mark>
    </pre>
 
+   &nbsp;
 
-   ### Menyalin Sertifikat dan Kunci ke Mesin Klien
+4. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
    Dilakukan pada host atau diluar container.
    <pre>
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key   
    </pre>
+
+   &nbsp;
+
+5. Persiapkan File Konfigurasi Client. <br />
+   Pastikan Anda memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
+   <pre>
+   ❯ vim client.ovpn
+      . . .
+      client
+      dev tun
+      proto udp
+      remote 192.168.100.225 1194  # Ganti dengan IP server OpenVPN dan port yang digunakan (default 1194)
+
+      resolv-retry infinite
+      nobind
+      persist-key
+      persist-tun
+
+      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ca.crt
+      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.crt
+      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.key
+
+      remote-cert-tls server
+      cipher AES-256-CBC
+      verb 3
+   </pre>
+
+   &nbsp;
+
+6. Verifikasi Koneksi. <br />
+   Setelah menjalankan perintah di atas, OpenVPN akan mencoba untuk terhubung ke server menggunakan konfigurasi yang diberikan dalam file client.ovpn. Pada output terminal, Anda akan melihat informasi mengenai status koneksi, termasuk jika koneksi berhasil atau jika terdapat masalah yang perlu diperbaiki.
+
 
 
 
