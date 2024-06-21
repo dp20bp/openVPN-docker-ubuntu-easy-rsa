@@ -307,9 +307,7 @@
       2 directories, 1 file   
    </pre>
 
-   &nbsp;
-
-   ### 🔹 Konfigurasi OpenVPN
+   🔹 Konfigurasi OpenVPN
    Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/ca.crt /etc/openvpn/</mark>
