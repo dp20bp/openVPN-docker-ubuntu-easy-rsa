@@ -110,3 +110,24 @@
     Saat Anda diminta memasukkan passphrase untuk /etc/openvpn/pki/private/ca.key, Anda harus memasukkan passphrase yang sama dengan yang Anda gunakan sebelumnya (yaitu “test123”). File ca.key adalah kunci pribadi untuk otoritas sertifikat (CA) yang akan digunakan untuk menandatangani sertifikat lain.<br />
     - **CRL (Certificate Revocation List):** <br />
     Pesan terakhir menunjukkan bahwa CRL telah diperbarui. CRL adalah daftar yang berisi sertifikat yang dicabut (revoke) oleh CA. Ini penting untuk mengamankan jaringan dan memastikan bahwa sertifikat yang tidak valid tidak dapat digunakan.
+
+3.  Jalankan OpenVPN Server: <br />
+    Pada Docker versi 1.2 atau lebih baru.
+    <pre>
+    ❯ docker run --volumes-from ovpn-data -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+        WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+        6b23ed2b933b23e036fb6c87e7d2cfe8b8ffc187f87977ae9bdd4c9d30f02070
+    </pre>
+
+4.  Buat Sertifikat Klien: <br />
+    Buat sertifikat klien tanpa passphrase:
+    <pre>
+    docker run --volumes-from ovpn-data --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
+    </pre>
+    Dapatkan konfigurasi klien dengan sertifikat tersemat:
+    <pre>
+    docker run --volumes-from ovpn-data --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
+    </pre>
+
+5.  Konfigurasi Host: <br />
+    Unduh file CLIENTNAME.ovpn dan gunakan pada host 192.168.100.225
