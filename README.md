@@ -161,5 +161,13 @@ Menjalankan Container
       This is going to take a long time      
       ...........................................+.........................................................................+.......+.............+......................................................................................................................................................++*++*++*++*
 
-      DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem      
+      DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem
+
+     .../easy-rsa# <mark>./ls -lah</mark>
+      lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
+      -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
+      -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
+      drwx------ 8 root root 4.0K Jun 21 07:51 pki
+      -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
+      lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types      
    </pre>
