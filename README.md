@@ -10,7 +10,7 @@ Menjalankan Container
    ❯ chmod +x init-easyrsa.sh
    </pre>
 
-2. Bangun dan Jalankan Container: <br />
+2. Build dan Run Container: <br />
    Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
    ❯ docker-compose up --build
@@ -52,9 +52,13 @@ Menjalankan Container
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
 
-3. Masuk ke Container dengan membuka dan dilakukan pada terminal baru:
+3. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
    Setelah container berjalan, Anda bisa masuk ke dalam container untuk menjalankan skrip inisialisasi:
    <pre>
+   ❯ docker images
+      REPOSITORY                               TAG       IMAGE ID       CREATED          SIZE
+      openvpn-docker-ubuntu-easy-rsa_openvpn   latest    7ad277ba3f55   14 minutes ago   190MB
+
    ❯ docker ps -a
         CONTAINER ID   IMAGE                                    COMMAND   CREATED          STATUS          PORTS                    NAMES
         8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
