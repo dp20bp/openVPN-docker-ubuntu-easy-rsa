@@ -4,7 +4,7 @@
 
 ### 🏁 Langkah-langkah : 
 
-1. Buat Skrip init-easyrsa.sh Eksekutabel: <br />
+1. Buat Skrip init-easyrsa.sh ( eksekutabel ): <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
    <pre>
    ❯ chmod +x init-easyrsa.sh
