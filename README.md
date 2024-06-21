@@ -66,12 +66,97 @@ Menjalankan Container
         8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
 
    ❯ docker exec -it openvpn-test bash
-     .../easy-rsa# cd /etc/openvpn/easy-rsa
-     .../easy-rsa# ls -lah
+     .../easy-rsa# <mark>cd /etc/openvpn/easy-rsa</mark>
+     .../easy-rsa# <mark>ls -lah</mark>
       lrwxrwxrwx 1 root root   27 Jun 21 07:07 easyrsa -> /usr/share/easy-rsa/easyrsa
       -rwxr-xr-x 1 root root  279 Jun 21 06:23 init-easyrsa.sh
       -rw-r--r-- 1 root root 4.6K Jun 21 07:07 openssl-easyrsa.cnf
       -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
       lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types
-     .../easy-rsa# ./init-easyrsa.sh
+     .../easy-rsa# <mark>./init-easyrsa.sh</mark>
+      Note: using Easy-RSA configuration from: ./vars
+
+      init-pki complete; you may now create a CA or requests.
+      Your newly created PKI dir is: /etc/openvpn/easy-rsa/pki
+
+
+      Note: using Easy-RSA configuration from: ./vars
+
+      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Generating RSA private key, 2048 bit long modulus (2 primes)
+      ........+++++
+      ....................................+++++
+      e is 65537 (0x010001)
+      Can't load /etc/openvpn/easy-rsa/pki/.rnd into RNG
+      281473367968224:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:98:Filename=/etc/openvpn/easy-rsa/pki/.rnd
+      You are about to be asked to enter information that will be incorporated
+      into your certificate request.
+      What you are about to enter is what is called a Distinguished Name or a DN.
+      There are quite a few fields but you can leave some blank
+      For some fields there will be a default value,
+      If you enter '.', the field will be left blank.
+      -----
+      Common Name (eg: your user, host, or server name) [Easy-RSA CA]:
+      CA creation complete and you may now import and sign cert requests.
+      Your new CA certificate file for publishing is at:
+      /etc/openvpn/easy-rsa/pki/ca.crt
+
+
+      Note: using Easy-RSA configuration from: ./vars
+
+      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Generating a RSA private key
+      ....................+++++
+      .......+++++
+      writing new private key to '/etc/openvpn/easy-rsa/pki/private/server.key.sXtcKOiK7S'
+      -----
+      You are about to be asked to enter information that will be incorporated
+      into your certificate request.
+      What you are about to enter is what is called a Distinguished Name or a DN.
+      There are quite a few fields but you can leave some blank
+      For some fields there will be a default value,
+      If you enter '.', the field will be left blank.
+      -----
+      Common Name (eg: your user, host, or server name) [server]:hostest
+
+      Keypair and certificate request completed. Your files are:
+      req: /etc/openvpn/easy-rsa/pki/reqs/server.req
+      key: /etc/openvpn/easy-rsa/pki/private/server.key
+
+
+      Note: using Easy-RSA configuration from: ./vars
+
+      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+
+
+      You are about to sign the following certificate.
+      Please check over the details shown below for accuracy. Note that this request
+      has not been cryptographically verified. Please be sure it came from a trusted
+      source or that you have verified the request checksum with the sender.
+
+      Request subject, to be signed as a server certificate for 1080 days:
+
+      subject=
+         commonName                = <mark>hostest</mark>
+
+
+      Type the word 'yes' to continue, or any other input to abort.
+      Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/safessl-easyrsa.cnf
+      Check that the request matches the signature
+      Signature ok
+      The Subject's Distinguished Name is as follows
+      commonName            :ASN.1 12:'hostest'
+      Certificate is to be certified until Jun  6 07:51:00 2027 GMT (1080 days)
+
+      Write out database with 1 new entries
+      Data Base Updated
+
+      Certificate created at: /etc/openvpn/easy-rsa/pki/issued/server.crt
+
+
+      Note: using Easy-RSA configuration from: ./vars
+
+      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Generating DH parameters, 2048 bit long safe prime, generator 2
+      This is going to take a long time      
    </pre>
