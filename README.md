@@ -170,4 +170,28 @@ Menjalankan Container
       drwx------ 8 root root 4.0K Jun 21 07:51 pki
       -rw-r--r-- 1 root root 8.4K Jun 21 07:07 vars
       lrwxrwxrwx 1 root root   30 Jun 21 07:07 x509-types -> /usr/share/easy-rsa/x509-types      
+
+
+     .../easy-rsa# <mark>./easyrsa gen-req client nopass</mark>
+
+      Note: using Easy-RSA configuration from: ./vars
+
+      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Generating a RSA private key
+      .............................+++++
+      .............................+++++
+      writing new private key to '/etc/openvpn/easy-rsa/pki/private/client.key.xAQZwdamhI'
+      -----
+      You are about to be asked to enter information that will be incorporated
+      into your certificate request.
+      What you are about to enter is what is called a Distinguished Name or a DN.
+      There are quite a few fields but you can leave some blank
+      For some fields there will be a default value,
+      If you enter '.', the field will be left blank.
+      -----
+      Common Name (eg: your user, host, or server name) [client]:<mark>hostest</mark>
+
+      Keypair and certificate request completed. Your files are:
+      req: /etc/openvpn/easy-rsa/pki/reqs/client.req
+      key: /etc/openvpn/easy-rsa/pki/private/client.key      
    </pre>
