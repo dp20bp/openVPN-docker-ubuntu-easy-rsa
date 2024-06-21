@@ -156,7 +156,7 @@
 
       2 directories, 1 file   
    </pre>
-   
+
    🔹 Jalankan script.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>./init-easyrsa.sh</mark>
@@ -382,6 +382,9 @@
 
 4. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
    Dilakukan pada host atau diluar container.
+   <pre>
+   ....:/etc/openvpn/easy-rsa# exit
+   </pre>
    <pre>
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
