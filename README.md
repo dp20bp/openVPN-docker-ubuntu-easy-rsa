@@ -6,6 +6,22 @@
 
 <pre>
 ❯ vim Dockerfile
+   . . .
+   FROM ubuntu:20.04
+
+   RUN apt-get update && \
+      apt-get install -y openvpn easy-rsa tree vim && \
+      apt-get clean && \
+      rm -rf /var/lib/apt/lists/*
+
+   RUN make-cadir /etc/openvpn/easy-rsa
+
+   WORKDIR /etc/openvpn/easy-rsa
+
+   COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
+
+   CMD ["bash"]
+
 </pre>
 
 &nbsp;
