@@ -1,4 +1,4 @@
-# openVPN & easy-rsa
+# 🚩 openVPN & easy-rsa
 
 &nbsp;
 
