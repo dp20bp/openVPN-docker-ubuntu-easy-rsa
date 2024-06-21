@@ -374,9 +374,7 @@
          verb 3
    ```
 
-   &nbsp;
-
-   ### 🔹 Jalankan OpenVPN Server
+   🔹 Jalankan OpenVPN Server <br />
    Untuk menjalankan OpenVPN server, gunakan perintah berikut di dalam container:
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>openvpn --config /etc/openvpn/server.conf</mark>
