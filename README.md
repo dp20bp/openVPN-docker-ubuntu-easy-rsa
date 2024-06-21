@@ -86,6 +86,11 @@ Menjalankan Container
       |-- vars
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
+   ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
+      /etc/openvpn
+      |-- client
+      |-- server
+      `-- update-resolv-conf
    </pre>
    ⌘ Jalankan Skrip.
    <pre>
