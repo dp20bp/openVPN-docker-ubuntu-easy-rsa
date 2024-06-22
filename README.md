@@ -72,7 +72,7 @@
    </pre>
 
 2. Build dan Run Container: <br />
-   Jalankan perintah berikut untuk membangun dan menjalankan container:
+   🏃🏼‍♂️ Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
    ❯ docker-compose up --build
    </pre>
@@ -400,7 +400,7 @@
 
    &nbsp;
 
-4. Pastikan port 1194 di dalam container telah aktif.
+4. Pastikan port `1194` di dalam container telah aktif.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>netstat -tuln | grep 1194</mark>
    </pre>
