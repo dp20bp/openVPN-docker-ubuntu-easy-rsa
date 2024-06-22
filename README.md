@@ -46,10 +46,10 @@ by Dhony Abu Muhammad
       ./easyrsa gen-dh
 
       # Generate TLS-Auth key
-      openvpn --genkey --secret /etc/openvpn/easy-rsa/pki/ta.key
+      openvpn --genkey --secret /etc/openvpn/easy-rsa/ta.key
 
       # Set permissions (optional)
-      chmod 600 /etc/openvpn/easy-rsa/pki/ta.key      
+      chmod 600 /etc/openvpn/easy-rsa/ta.key      
    </pre>
    🟡 docker-compose.yml
    <pre>
