@@ -467,16 +467,17 @@ by Dhony Abu Muhammad
    ....:/etc/openvpn/easy-rsa# <mark>exit</mark>
    </pre>
    <pre>
-   ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
-   ❯ docker cp openvpn-test:~/client-configs/files/client1.crt ./client.crt
-   ❯ docker cp openvpn-test:~/client-configs/files/client1.key ./client.key
-   ❯ docker cp openvpn-test:/etc/openvpn/ta.key ./ta.key
+   ❯ mkdir -p client1/file
+   ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./client1/file/ca.crt
+   ❯ docker cp openvpn-test:~/client-configs/files/client1.crt ./client1/file/client.crt
+   ❯ docker cp openvpn-test:~/client-configs/files/client1.key ./client1/file/client.key
+   ❯ docker cp openvpn-test:/etc/openvpn/ta.key ./client1/file/ta.key
    </pre>
 
    &nbsp;
 
 7. Persiapkan File Konfigurasi Client. <br />
-   Pastikan telah memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini: <br />
+   Pastikan telah memiliki file konfigurasi client OpenVPN (`/client1/client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini: <br />
 
    Before
    <pre>
@@ -492,10 +493,10 @@ by Dhony Abu Muhammad
       persist-key
       persist-tun
 
-      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ca.crt
-      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.crt
-      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.key
-      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ta.key
+      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
+      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
+      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
+      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
 
       remote-cert-tls server
       cipher AES-256-CBC
@@ -520,10 +521,10 @@ by Dhony Abu Muhammad
       key-direction 1
       verb 3
 
-      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ca.crt
-      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.crt
-      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.key
-      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ta.key
+      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
+      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
+      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
+      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
    </pre>
 
 
