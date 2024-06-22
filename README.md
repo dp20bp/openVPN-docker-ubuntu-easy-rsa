@@ -71,8 +71,7 @@
 
    &nbsp;
 
-2. Buat Skrip init-easyrsa.sh eksekutabel: <br />
-   Pastikan skrip init-easyrsa.sh dapat dieksekusi:
+2. Buat Skrip init-easyrsa.sh eksekutabel:
    <pre>
    ❯ chmod +x init-easyrsa.sh
    </pre>
