@@ -427,7 +427,7 @@
    Proto Recv-Q Send-Q Local Address           Foreign Address         State      
    tcp        0      0 127.0.0.11:43907        0.0.0.0:*               LISTEN     
    udp        0      0 127.0.0.11:39163        0.0.0.0:*                          
-   <mark>udp        0      0 0.0.0.0:1194            0.0.0.0:*              </mark>
+   <mark>udp        0      0 0.0.0.0:1194            0.0.0.0:*                     </mark>
    </pre>
 
    &nbsp;
