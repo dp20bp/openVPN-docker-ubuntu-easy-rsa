@@ -37,7 +37,7 @@
       # Buat CA baru tanpa password
       echo | ./easyrsa build-ca nopass
 
-      # Buat server request dan tanda tangani
+      # Buat server request dan sign it
       ./easyrsa gen-req server nopass
       echo yes | ./easyrsa sign-req server server
 
