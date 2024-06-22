@@ -612,6 +612,17 @@ with the implementation of the first draft configuration on the server and clien
 <pre>
 ....:/etc/openvpn/easy-rsa# <mark>tail -f /var/log/openvpn.log</mark>
    . . .
+   2024-06-22 23:17:44 Authenticate/Decrypt packet error: packet HMAC authentication failed
+   2024-06-22 23:17:44 TLS Error: incoming packet authentication failed from [AF_INET]172.18.0.1:62318
+   2024-06-22 23:17:45 Authenticate/Decrypt packet error: packet HMAC authentication failed
+   2024-06-22 23:17:45 TLS Error: incoming packet authentication failed from [AF_INET]172.18.0.1:62318
+   2024-06-22 23:17:46 Authenticate/Decrypt packet error: packet HMAC authentication failed
+   2024-06-22 23:17:46 TLS Error: incoming packet authentication failed from [AF_INET]172.18.0.1:62318
+   2024-06-22 23:17:47 Authenticate/Decrypt packet error: packet HMAC authentication failed
+   2024-06-22 23:17:47 TLS Error: incoming packet authentication failed from [AF_INET]172.18.0.1:62318
+   2024-06-22 23:17:48 Authenticate/Decrypt packet error: packet HMAC authentication failed
+   2024-06-22 23:17:48 TLS Error: incoming packet authentication failed from [AF_INET]172.18.0.1:62318
+    . . .
 </pre>
 
 with the implementation of the second draft configuration on the server and client
