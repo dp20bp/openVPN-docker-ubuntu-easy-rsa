@@ -121,10 +121,6 @@
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
 
-   &nbsp;
-
-4. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
-   Setelah container berjalan, Anda bisa masuk ke dalam container untuk menjalankan skrip inisialisasi:
    <pre>
    ❯ docker images
       REPOSITORY                               TAG       IMAGE ID       CREATED          SIZE
@@ -134,7 +130,11 @@
         CONTAINER ID   IMAGE                                    COMMAND   CREATED          STATUS          PORTS                    NAMES
         8fb69dfc193f   openvpn-docker-ubuntu-easy-rsa_openvpn   "bash"    17 minutes ago   Up 17 minutes   0.0.0.0:1194->1194/udp   openvpn-test
    </pre>
-   
+
+   &nbsp;
+
+4. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
+   Setelah container berjalan, masuk ke dalam container untuk menjalankan skrip inisialisasi:
    🔹 Masuk ke dalam Container
    <pre>
    ❯ docker exec -it openvpn-test bash
