@@ -317,8 +317,8 @@ by Dhony Abu Muhammad
       |   |   `-- reqs_by_serial
       |   |-- safessl-easyrsa.cnf
       |   |-- serial
-      |   |-- serial.old
-      |   `-- ta.key      
+      |   `-- serial.old
+      |-- ta.key      
       |-- vars
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
@@ -340,7 +340,7 @@ by Dhony Abu Muhammad
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/issued/server.crt /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/private/server.key /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/dh.pem /etc/openvpn/</mark>
-   ....:/etc/openvpn/easy-rsa# <mark>cp pki/ta.key /etc/openvpn/</mark>
+   ....:/etc/openvpn/easy-rsa# <mark>cp ta.key /etc/openvpn/</mark>
 
    ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
       /etc/openvpn
