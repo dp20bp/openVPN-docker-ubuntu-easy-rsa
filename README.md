@@ -101,7 +101,7 @@
       Attaching to openvpn-test
    </pre>
 
-   ⌘ Jangan tutup terminal ini ketika container berhasil dijalankan.
+   🟨 Jangan tutup terminal ini ketika container berhasil dijalankan.
 
    <div align="center">
       <img src="./gambar-petunjuk/ss_docker_desktop_001.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
@@ -342,11 +342,6 @@
    ....:/etc/openvpn/easy-rsa# openssl x509 -in /etc/openvpn/ca.crt -text -noout | grep "Not After"
          Not After : Jun 19 07:50:42 2034 GMT
    </pre>
-   Periksa Sertifikat Client (Opsional)
-   <pre>
-   ....:/etc/openvpn/easy-rsa# openssl x509 -in /path/to/client.crt -text -noout | grep "Not After"
-         Not After : Jun 21 12:34:56 2025 GMT
-   </pre>
    Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, Anda perlu memperbarui sertifikat tersebut.
 
    **Contoh File Konfigurasi Server OpenVPN** <br />
@@ -379,27 +374,48 @@
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>openvpn --config /etc/openvpn/server.conf</mark>
    </pre>
+   Notes : <br />
+   🏃🏼‍♂️ Setelah menjalankan perintah di atas, pada terminal akan terus berlangsungnya peroses. <br /> 
+   🟨 Jangan tutup terminal ini. <br />
+   Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
 
-   Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, Anda dapat melakukan beberapa langkah pengujian berikut: <br />
+   **[ Optional ]** Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, Anda dapat melakukan beberapa langkah pengujian berikut: <br />
    Periksa Log OpenVPN
    <pre>
    ....:/etc/openvpn/easy-rsa# tail -f /var/log/openvpn.log
-      Fri Jun 21 10:35:52 2024 Diffie-Hellman initialized with 2048 bit key
-      Fri Jun 21 10:35:52 2024 ROUTE_GATEWAY 172.21.0.1/255.255.0.0 IFACE=eth0 HWADDR=02:42:ac:15:00:02
-      Fri Jun 21 10:35:52 2024 ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such file or directory (errno=2)
-      Fri Jun 21 10:35:52 2024 Exiting due to fatal error
-      Fri Jun 21 11:34:01 2024 OpenVPN 2.4.12 aarch64-unknown-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] built on Aug 21 2023
-      Fri Jun 21 11:34:01 2024 library versions: OpenSSL 1.1.1f  31 Mar 2020, LZO 2.10
-      Fri Jun 21 11:34:01 2024 Diffie-Hellman initialized with 2048 bit key
-      Fri Jun 21 11:34:01 2024 ROUTE_GATEWAY 172.21.0.1/255.255.0.0 IFACE=eth0 HWADDR=02:42:ac:15:00:02
-      Fri Jun 21 11:34:01 2024 ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such file or directory (errno=2)
-      Fri Jun 21 11:34:01 2024 Exiting due to fatal error
+      2024-06-22 01:04:19 net_addr_ptp_v4_add: 10.8.0.1 peer 10.8.0.2 dev tun0
+      2024-06-22 01:04:19 net_route_v4_add: 10.8.0.0/24 via 10.8.0.2 dev [NULL] table 0 metric -1
+      2024-06-22 01:04:19 Could not determine IPv4/IPv6 protocol. Using AF_INET
+      2024-06-22 01:04:19 Socket Buffers: R=[212992->212992] S=[212992->212992]
+      2024-06-22 01:04:19 UDPv4 link local (bound): [AF_INET][undef]:1194
+      2024-06-22 01:04:19 UDPv4 link remote: [AF_UNSPEC]
+      2024-06-22 01:04:19 MULTI: multi_init called, r=256 v=256
+      2024-06-22 01:04:19 IFCONFIG POOL IPv4: base=10.8.0.4 size=62
+      2024-06-22 01:04:19 IFCONFIG POOL LIST
+      2024-06-22 01:04:19 Initialization Sequence Completed
    </pre>
-   Periksa apakah ada pesan seperti `Initialization Sequence Completed` yang menunjukkan bahwa OpenVPN telah berhasil memulai dan menyelesaikan proses inisialisasi.
+   Periksa apakah ada pesan seperti `Initialization Sequence Completed` yang menunjukkan bahwa OpenVPN telah berhasil memulai dan menyelesaikan proses inisialisasi. <br />
+   🏃🏼‍♂️ Setelah menjalankan perintah di atas, pada terminal akan terus berlangsungnya peroses. <br /> 
+   ⬜️ Anda dapat terus memantau hasil realtime pada openvpn.log selama proses openvpn ini berlangsung, atau boleh juga menutupnya.
 
    &nbsp;
 
-4. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
+4. Pastikan port 1194 di dalam container telah aktif.
+   <pre>
+   ....:/etc/openvpn/easy-rsa# <mark>netstat -tuln | grep 1194</mark>
+   </pre>
+   Anda harus melihat sesuatu seperti ini:
+   <pre>
+   Active Internet connections (only servers)
+   Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+   tcp        0      0 127.0.0.11:43907        0.0.0.0:*               LISTEN     
+   udp        0      0 127.0.0.11:39163        0.0.0.0:*                          
+   udp        0      0 0.0.0.0:1194            0.0.0.0:*  
+   </pre>
+
+   &nbsp;
+
+5. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
    Dilakukan pada host atau diluar container.
    <pre>
    ....:/etc/openvpn/easy-rsa# exit
@@ -408,18 +424,6 @@
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key   
-   </pre>
-
-   &nbsp;
-
-5. Verifikasi Port Forwarding di Host. <br />
-   Pastikan port 1194 pada host (192.168.100.225) diteruskan ke port 1194 di container.
-   <pre>
-   ❯ netstat -tuln | grep 1194
-   </pre>
-   Anda harus melihat sesuatu seperti ini jika port 1194 di-host mendengarkan:
-   <pre>
-      udp        0      0 0.0.0.0:1194            0.0.0.0:*
    </pre>
 
    &nbsp;
