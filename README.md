@@ -4,84 +4,84 @@
 
 ### 🏁 Langkah-langkah :
 
-<pre>
-❯ vim Dockerfile
-   . . .
-   FROM gitea/runner-images:ubuntu-20.04-slim
+1. Persiapkan file-file dan script di dalamnya sebagai berikut:
 
-   RUN apt-get update && \
-      apt-get install -y openvpn easy-rsa tree vim net-tools kmod && \
-      apt-get clean && \
-      rm -rf /var/lib/apt/lists/*
+   <pre>
+   ❯ vim Dockerfile
+      . . .
+      FROM gitea/runner-images:ubuntu-20.04-slim
 
-   RUN make-cadir /etc/openvpn/easy-rsa
+      RUN apt-get update && \
+         apt-get install -y openvpn easy-rsa tree vim net-tools kmod && \
+         apt-get clean && \
+         rm -rf /var/lib/apt/lists/*
 
-   WORKDIR /etc/openvpn/easy-rsa
+      RUN make-cadir /etc/openvpn/easy-rsa
 
-   COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
+      WORKDIR /etc/openvpn/easy-rsa
 
-   RUN mkdir -p /dev/net && mknod /dev/net/tun c 10 200 && chmod 600 /dev/net/tun
+      COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
 
-   CMD ["bash"]
-</pre>
+      RUN mkdir -p /dev/net && mknod /dev/net/tun c 10 200 && chmod 600 /dev/net/tun
 
-&nbsp;
+      CMD ["bash"]
+   </pre>
 
-<pre>
-❯ vim init-easyrsa.sh
-   . . .
-   #!/bin/bash
+   &nbsp;
 
-   ./easyrsa init-pki
+   <pre>
+   ❯ vim init-easyrsa.sh
+      . . .
+      #!/bin/bash
 
-   # Buat CA baru tanpa password
-   echo | ./easyrsa build-ca nopass
+      ./easyrsa init-pki
 
-   # Buat server request dan tanda tangani
-   ./easyrsa gen-req server nopass
-   echo yes | ./easyrsa sign-req server server
+      # Buat CA baru tanpa password
+      echo | ./easyrsa build-ca nopass
 
-   # Buat Diffie-Hellman parameters
-   ./easyrsa gen-dh
-</pre>
+      # Buat server request dan tanda tangani
+      ./easyrsa gen-req server nopass
+      echo yes | ./easyrsa sign-req server server
 
-&nbsp;
+      # Buat Diffie-Hellman parameters
+      ./easyrsa gen-dh
+   </pre>
 
-<pre>
-❯ vim docker-compose.yml
-   . . .
-    version: '3.8'
-    services:
-      openvpn:
-        build: .
-        container_name: openvpn-test
-        cap_add:
-          - NET_ADMIN
-        devices:
-          - /dev/net/tun      
-        ports:
-          - "1194:1194/udp"
-        stdin_open: true
-        tty: true
-        volumes:
-          - openvpn-data:/etc/openvpn
-    
-    volumes:
-      openvpn-data:
-        driver: local
-</pre>
+   &nbsp;
 
-&nbsp;
+   <pre>
+   ❯ vim docker-compose.yml
+      . . .
+      version: '3.8'
+      services:
+         openvpn:
+         build: .
+         container_name: openvpn-test
+         cap_add:
+            - NET_ADMIN
+         devices:
+            - /dev/net/tun      
+         ports:
+            - "1194:1194/udp"
+         stdin_open: true
+         tty: true
+         volumes:
+            - openvpn-data:/etc/openvpn
+      
+      volumes:
+         openvpn-data:
+         driver: local
+   </pre>
 
-&nbsp;
+   &nbsp;
 
-1. Buat Skrip init-easyrsa.sh eksekutabel: <br />
+2. Buat Skrip init-easyrsa.sh eksekutabel: <br />
    Pastikan skrip init-easyrsa.sh dapat dieksekusi:
    <pre>
    ❯ chmod +x init-easyrsa.sh
    </pre>
 
-2. Build dan Run Container: <br />
+3. Build dan Run Container: <br />
    🏃🏼‍♂️ Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
    ❯ docker-compose up --build
@@ -123,7 +123,7 @@
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
 
-3. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
+4. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
    Setelah container berjalan, Anda bisa masuk ke dalam container untuk menjalankan skrip inisialisasi:
    <pre>
    ❯ docker images
@@ -410,7 +410,7 @@
 
    &nbsp;
 
-4. Pastikan port `1194` di dalam container telah aktif.
+5. Pastikan port `1194` di dalam container telah aktif.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>netstat -tuln | grep 1194</mark>
    </pre>
@@ -425,7 +425,7 @@
 
    &nbsp;
 
-5. Menyalin Sertifikat dan Kunci ke Mesin Klien ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
+6. Menyalin Sertifikat dan Kunci ke Mesin Klien ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>exit</mark>
    </pre>
@@ -437,7 +437,7 @@
 
    &nbsp;
 
-6. Persiapkan File Konfigurasi Client. <br />
+7. Persiapkan File Konfigurasi Client. <br />
    Pastikan Anda memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
    <pre>
    ❯ vim client.ovpn
@@ -477,7 +477,7 @@
 
    &nbsp;
 
-7. Verifikasi Koneksi. <br />
+8. Verifikasi Koneksi. <br />
    Setelah menjalankan perintah di atas, OpenVPN akan mencoba untuk terhubung ke server menggunakan konfigurasi yang diberikan dalam file client.ovpn. Pada output terminal, Anda akan melihat informasi mengenai status koneksi, termasuk jika koneksi berhasil atau jika terdapat masalah yang perlu diperbaiki.
 
    &nbsp;
