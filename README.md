@@ -482,17 +482,19 @@
 
    <pre>
    ❯ tree -L 3 -a -I '.DS_Store|.git|.gitignore|README.md|gambar-petunjuk' ./
-      ./
       ├── Dockerfile
       ├── ca.crt
       ├── client.crt
       ├── client.key
       ├── client.ovpn
       ├── docker-compose.yml
-      └── init-easyrsa.sh
+      ├── init-easyrsa.sh
+      ├── kylemanna-openvpn-with-passphrase
+      │   └── CLIENTNAME.ovpn
+      └── ta.key
 
-      0 directories, 7 files
-      </pre>
+      1 directory, 9 files
+   </pre>
 
    &nbsp;
 
