@@ -473,6 +473,7 @@
       ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ca.crt
       cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.crt
       key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.key
+      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ta.key
 
       remote-cert-tls server
       cipher AES-256-CBC
