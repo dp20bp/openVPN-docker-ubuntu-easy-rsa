@@ -71,7 +71,7 @@
 
    &nbsp;
 
-2. Memberikan kemampuan file `init-easyrsa.sh` eksekutabel:
+2. Memberikan file `init-easyrsa.sh` eksekutabel:
    <pre>
    ❯ chmod +x init-easyrsa.sh
    </pre>
