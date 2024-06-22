@@ -121,6 +121,8 @@
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
 
+   &nbsp;
+
    <pre>
    ❯ docker images
       REPOSITORY                               TAG       IMAGE ID       CREATED          SIZE
