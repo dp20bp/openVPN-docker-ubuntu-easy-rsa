@@ -374,6 +374,7 @@ by Dhony Abu Muhammad
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>vim /etc/openvpn/server.conf</mark>
          . . .
+   Before
    </pre>
    ```bash
          port 1194
@@ -390,6 +391,24 @@ by Dhony Abu Muhammad
          cipher AES-256-CBC
          persist-key
          persist-tun
+         status openvpn-status.log
+         log-append /var/log/openvpn.log
+         verb 3
+   ```
+   After
+   ```bash
+         port 1194
+         proto udp
+         dev tun
+         ca /etc/openvpn/ca.crt
+         cert /etc/openvpn/server.crt
+         key /etc/openvpn/server.key
+         dh /etc/openvpn/dh.pem
+         auth SHA256
+         tls-auth /etc/openvpn/ta.key 0
+         cipher AES-256-CBC
+         push "redirect-gateway def1 bypass-dhcp"
+         push "dhcp-option DNS 8.8.8.8"
          status openvpn-status.log
          log-append /var/log/openvpn.log
          verb 3
