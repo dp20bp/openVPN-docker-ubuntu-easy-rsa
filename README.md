@@ -349,9 +349,10 @@
       |-- server
       |-- server.crt
       |-- server.key
+      |-- ta.key
       `-- update-resolv-conf
 
-      2 directories, 5 files   
+      2 directories, 6 files  
    </pre>
 
    Periksa Sertifikat Server.<br />
