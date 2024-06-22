@@ -468,22 +468,24 @@ by Dhony Abu Muhammad
    </pre>
    <pre>
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
-   ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
-   ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key
+   ❯ docker cp openvpn-test:~/client-configs/files/client1.crt ./client.crt
+   ❯ docker cp openvpn-test:~/client-configs/files/client1.key ./client.key
    ❯ docker cp openvpn-test:/etc/openvpn/ta.key ./ta.key
    </pre>
 
    &nbsp;
 
 7. Persiapkan File Konfigurasi Client. <br />
-   Pastikan telah memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
+   Pastikan telah memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini: <br />
+
+   Before
    <pre>
    ❯ vim client.ovpn
       . . .
       client
       dev tun
       proto udp
-      remote 192.168.100.225 1194  # Ganti dengan IP server OpenVPN dan port yang digunakan (default 1194)
+      remote 192.168.100.225 1194  # port yang digunakan (default 1194)
 
       resolv-retry infinite
       nobind
@@ -499,6 +501,31 @@ by Dhony Abu Muhammad
       cipher AES-256-CBC
       verb 3
    </pre>
+
+   After
+   <pre>
+   ❯ vim client.ovpn
+      . . .
+      client
+      dev tun
+      proto udp
+      remote 192.168.100.225 1194
+      resolv-retry infinite
+      nobind
+      persist-key
+      persist-tun
+      remote-cert-tls server
+      auth SHA256
+      cipher AES-256-CBC
+      key-direction 1
+      verb 3
+
+      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ca.crt
+      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.crt
+      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client.key
+      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/ta.key
+   </pre>
+
 
    <pre>
    ❯ tree -L 3 -a -I '.DS_Store|.git|.gitignore|README.md|gambar-petunjuk' ./
