@@ -123,6 +123,7 @@
 
    &nbsp;
 
+   ⌘ Melihat hasil docker container pada terminal perintah lain.
    <pre>
    ❯ docker images
       REPOSITORY                               TAG       IMAGE ID       CREATED          SIZE
