@@ -521,9 +521,10 @@ by Dhony Abu Muhammad
    &nbsp;
 
 7. Persiapkan File Konfigurasi Client. <br />
-   Pastikan telah memiliki file konfigurasi client OpenVPN (`/client1/client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini: <br />
+   Pastikan telah memiliki file konfigurasi client OpenVPN (`/client1/client.ovpn`). 
+   File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini: <br />
 
-   Before
+   test - first draft
    <pre>
    ❯ vim client.ovpn
       . . .
@@ -531,7 +532,6 @@ by Dhony Abu Muhammad
       dev tun
       proto udp
       remote 192.168.100.225 1194  # port yang digunakan (default 1194)
-
       resolv-retry infinite
       nobind
       persist-key
@@ -547,45 +547,48 @@ by Dhony Abu Muhammad
       verb 3
    </pre>
 
-   After
+   test - second draft
    <pre>
    ❯ vim client.ovpn
       . . .
-client
-dev tun
-proto udp
-remote 192.168.100.225 1194
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-remote-cert-tls server
-auth SHA256
-cipher AES-256-CBC
-key-direction 1
-verb 3
+      client
+      dev tun
+      proto udp
+      remote 192.168.100.225 1194
+      resolv-retry infinite
+      nobind
+      persist-key
+      persist-tun
+      remote-cert-tls server
+      auth SHA256
+      cipher AES-256-CBC
+      key-direction 1
+      verb 3
 
-ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
-cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
-key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
-tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
+      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
+      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
+      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
+      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
    </pre>
 
 
    <pre>
-   ❯ tree -L 3 -a -I '.DS_Store|.git|.gitignore|README.md|gambar-petunjuk' ./
+   ❯ tree -L 3 -a -I '.DS_Store|.git|.gitignore|README.md|gambar-petunjuk|tmp' ./
+      ./
       ├── Dockerfile
-      ├── ca.crt
-      ├── client.crt
-      ├── client.key
-      ├── client.ovpn
+      ├── client1
+      │   └── file
+      │       ├── ca.crt
+      │       ├── client.crt
+      │       ├── client.key
+      │       ├── client.ovpn
+      │       └── ta.key
       ├── docker-compose.yml
       ├── init-easyrsa.sh
-      ├── kylemanna-openvpn-with-passphrase
-      │   └── CLIENTNAME.ovpn
-      └── ta.key
+      └── kylemanna-openvpn-with-passphrase
+         └── CLIENTNAME.ovpn
 
-      1 directory, 9 files
+      3 directories, 9 files
    </pre>
 
    &nbsp;
@@ -593,8 +596,26 @@ tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubun
 8. Verifikasi Koneksi. <br />
    Setelah menjalankan perintah di atas, OpenVPN akan mencoba untuk terhubung ke server menggunakan konfigurasi yang diberikan dalam file client.ovpn. Pada output terminal, Anda akan melihat informasi mengenai status koneksi, termasuk jika koneksi berhasil atau jika terdapat masalah yang perlu diperbaiki.
 
-   &nbsp;
+&nbsp;
 
-   &nbsp;
+&nbsp;
 
+&nbsp;
+
+&nbsp;
+
+   ---
+
+## 🧪 Analysis on ovpn.log results : 
+with the implementation of the first draft configuration on the server and client
+<pre>
+....:/etc/openvpn/easy-rsa# <mark>tail -f /var/log/openvpn.log</mark>
+   . . .
+</pre>
+
+with the implementation of the second draft configuration on the server and client
+<pre>
+....:/etc/openvpn/easy-rsa# <mark>tail -f /var/log/openvpn.log</mark>
+    . . .
+</pre>
 
