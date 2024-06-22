@@ -78,7 +78,7 @@
 
    &nbsp;
 
-3. Build dan Run Container: <br />
+3. Build dan Run Container pada terminal perintah. <br />
    🏃🏼‍♂️ Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
    ❯ docker-compose up --build
