@@ -506,7 +506,8 @@ by Dhony Abu Muhammad
 
    &nbsp;
 
-6. Salin certificate dan key ke perangkat client ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
+6. Salin certificate dan key ke perangkat client  <br />
+   ( dilakukan pada host / keluar jika posisi masih di dalam container ).
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>exit</mark>
    </pre>
