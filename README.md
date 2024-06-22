@@ -374,8 +374,8 @@ by Dhony Abu Muhammad
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>vim /etc/openvpn/server.conf</mark>
          . . .
-   Before
    </pre>
+   Before
    ```bash
          port 1194
          proto udp
