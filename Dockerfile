@@ -1,5 +1,6 @@
 # Gunakan Ubuntu image yang ringan
-FROM ubuntu:20.04
+# FROM ubuntu:20.04
+FROM gitea/runner-images:ubuntu-20.04-slim
 
 
 # Install OpenVPN dan easy-rsa

@@ -148,6 +148,8 @@
       |-- vars
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
+      1 directory, 4 files
+      
    ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
       /etc/openvpn
       |-- client
