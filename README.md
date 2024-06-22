@@ -7,10 +7,10 @@
 <pre>
 ❯ vim Dockerfile
    . . .
-   FROM ubuntu:20.04
+   FROM gitea/runner-images:ubuntu-20.04-slim
 
    RUN apt-get update && \
-      apt-get install -y openvpn easy-rsa tree vim && \
+      apt-get install -y openvpn easy-rsa tree vim net-tools kmod && \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/*
 
@@ -19,6 +19,8 @@
    WORKDIR /etc/openvpn/easy-rsa
 
    COPY init-easyrsa.sh /etc/openvpn/easy-rsa/
+
+   RUN mkdir -p /dev/net && mknod /dev/net/tun c 10 200 && chmod 600 /dev/net/tun
 
    CMD ["bash"]
 </pre>
@@ -48,17 +50,25 @@
 <pre>
 ❯ vim docker-compose.yml
    . . .
-   version: '3.8'
-   services:
+    version: '3.8'
+    services:
       openvpn:
         build: .
         container_name: openvpn-test
         cap_add:
           - NET_ADMIN
+        devices:
+          - /dev/net/tun      
         ports:
           - "1194:1194/udp"
         stdin_open: true
         tty: true
+        volumes:
+          - openvpn-data:/etc/openvpn
+    
+    volumes:
+      openvpn-data:
+        driver: local
 </pre>
 
 &nbsp;
