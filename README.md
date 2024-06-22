@@ -4,7 +4,7 @@
 
 ### 🏁 Langkah-langkah :
 
-1. Persiapkan file-file dan script di dalamnya sebagai berikut:
+1. Persiapkan file-file dan script di dalamnya sebagai berikut: <br />
    🟡 Dockerfile
    <pre>
    ❯ vim Dockerfile
