@@ -8,3 +8,8 @@ echo | ./easyrsa build-ca nopass
 echo yes | ./easyrsa sign-req server server
 # Buat Diffie-Hellman parameters
 ./easyrsa gen-dh
+
+# Generate TLS-Auth key
+openvpn --genkey --secret /etc/openvpn/easy-rsa/pki/ta.key
+# Set permissions (optional)
+chmod 600 /etc/openvpn/easy-rsa/pki/ta.key

@@ -326,12 +326,13 @@
    </pre>
 
    🔹 Konfigurasi OpenVPN
-   Salin file yang diperlukan ke direktori konfigurasi OpenVPN:
+   Salin file yang diperlukan dari direktori pki (public key infrastructure) ke direktori konfigurasi OpenVPN:
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/ca.crt /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/issued/server.crt /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/private/server.key /etc/openvpn/</mark>
    ....:/etc/openvpn/easy-rsa# <mark>cp pki/dh.pem /etc/openvpn/</mark>
+   ....:/etc/openvpn/easy-rsa# <mark>cp pki/ta.key /etc/openvpn/</mark>
 
    ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
       /etc/openvpn
@@ -373,6 +374,7 @@
          cert /etc/openvpn/server.crt
          key /etc/openvpn/server.key
          dh /etc/openvpn/dh.pem
+         tls-auth /etc/openvpn/ta.key 0
          server 10.8.0.0 255.255.255.0
          ifconfig-pool-persist ipp.txt
          keepalive 10 120
