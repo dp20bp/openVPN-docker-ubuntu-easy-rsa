@@ -87,27 +87,29 @@
    ❯ docker-compose up --build
    </pre>
    <pre>
-      [+] Building 118.8s (10/10) FINISHED                                                                                                                                                                                   
-      => [internal] load build definition from Dockerfile                                                                                               0.0s
-      => => transferring dockerfile: 515B                                                                                                               0.0s
-      => [internal] load .dockerignore                                                                                                                  0.0s
-      => => transferring context: 2B                                                                                                                    0.0s
-      => [internal] load metadata for docker.io/library/ubuntu:20.04                                                                                    3.2s
-      => CACHED [1/5] FROM docker.io/library/ubuntu:20.04@sha256:0b897358ff6624825fb50d20ffb605ab0eaea77ced0adb8c6a4b756513dec6fc                       0.0s
-      => [internal] load build context                                                                                                                  0.0s
-      => => transferring context: 37B                                                                                                                   0.0s
-      => [2/5] RUN apt-get update &&     apt-get install -y openvpn easy-rsa tree vim &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*           114.8s
-      => [3/5] RUN make-cadir /etc/openvpn/easy-rsa                                                                                                     0.1s
-      => [4/5] WORKDIR /etc/openvpn/easy-rsa                                                                                                            0.0s 
-      => [5/5] COPY init-easyrsa.sh /etc/openvpn/easy-rsa/                                                                                              0.0s 
-      => exporting to image                                                                                                                             0.5s 
-      => => exporting layers                                                                                                                            0.5s 
-      => => writing image sha256:7ad277ba3f552b549c266e29fe481e23beceb155a85ba4f207e10cf6eb68d08a                                                       0.0s 
-      => => naming to docker.io/library/openvpn-docker-ubuntu-easy-rsa_openvpn                                                                          0.0s
+      [+] Building 2.6s (11/11) FINISHED                                                                                                                                                                      
+      => [internal] load build definition from Dockerfile                                                                                                               0.0s
+      => => transferring dockerfile: 32B                                                                                                                                0.0s
+      => [internal] load .dockerignore                                                                                                                                  0.0s
+      => => transferring context: 2B                                                                                                                                    0.0s
+      => [internal] load metadata for docker.io/gitea/runner-images:ubuntu-20.04-slim                                                                                   2.5s
+      => [1/6] FROM docker.io/gitea/runner-images:ubuntu-20.04-slim@sha256:5c19eee0e0d36cbbb6d9582947d03ec0c695065ba8a76513ad9c56df1921a6b3                             0.0s
+      => [internal] load build context                                                                                                                                  0.0s
+      => => transferring context: 37B                                                                                                                                   0.0s
+      => CACHED [2/6] RUN apt-get update &&     apt-get install -y openvpn easy-rsa tree vim net-tools kmod &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*     0.0s
+      => CACHED [3/6] RUN make-cadir /etc/openvpn/easy-rsa                                                                                                              0.0s
+      => CACHED [4/6] WORKDIR /etc/openvpn/easy-rsa                                                                                                                     0.0s
+      => CACHED [5/6] COPY init-easyrsa.sh /etc/openvpn/easy-rsa/                                                                                                       0.0s
+      => CACHED [6/6] RUN mkdir -p /dev/net && mknod /dev/net/tun c 10 200 && chmod 600 /dev/net/tun                                                                    0.0s
+      => exporting to image                                                                                                                                             0.0s
+      => => exporting layers                                                                                                                                            0.0s
+      => => writing image sha256:c77c63b37803f592e365d485b6e64bef3f6e8c460a45333cad119c1b35b4f4fb                                                                       0.0s
+      => => naming to docker.io/library/openvpn-docker-ubuntu-easy-rsa_openvpn                                                                                          0.0s
 
       Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
-      [+] Running 1/1
-      ⠿ Container openvpn-test  Created                                                                                                                 0.1s
+      [+] Running 2/0
+      ⠿ Volume "openvpn-docker-ubuntu-easy-rsa_openvpn-data"  Created                                                                                                   0.0s
+      ⠿ Container openvpn-test                                Created                                                                                                   0.0s
       Attaching to openvpn-test
    </pre>
 
