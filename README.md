@@ -382,7 +382,7 @@
    **[ Optional ]** Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, Anda dapat melakukan beberapa langkah pengujian berikut: <br />
    Periksa Log OpenVPN
    <pre>
-   ....:/etc/openvpn/easy-rsa# tail -f /var/log/openvpn.log
+   ....:/etc/openvpn/easy-rsa# <mark>tail -f /var/log/openvpn.log</mark>
       2024-06-22 01:04:19 net_addr_ptp_v4_add: 10.8.0.1 peer 10.8.0.2 dev tun0
       2024-06-22 01:04:19 net_route_v4_add: 10.8.0.0/24 via 10.8.0.2 dev [NULL] table 0 metric -1
       2024-06-22 01:04:19 Could not determine IPv4/IPv6 protocol. Using AF_INET
@@ -415,10 +415,9 @@
 
    &nbsp;
 
-5. Menyalin Sertifikat dan Kunci ke Mesin Klien. <br />
-   Dilakukan pada host atau diluar container.
+5. Menyalin Sertifikat dan Kunci ke Mesin Klien ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
    <pre>
-   ....:/etc/openvpn/easy-rsa# exit
+   ....:/etc/openvpn/easy-rsa# <mark>exit</mark>
    </pre>
    <pre>
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
