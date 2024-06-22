@@ -43,6 +43,12 @@
 
       # Buat Diffie-Hellman parameters
       ./easyrsa gen-dh
+
+      # Generate TLS-Auth key
+      openvpn --genkey --secret /etc/openvpn/easy-rsa/pki/ta.key
+
+      # Set permissions (optional)
+      chmod 600 /etc/openvpn/easy-rsa/pki/ta.key      
    </pre>
    🟡 docker-compose.yml
    <pre>
@@ -441,7 +447,8 @@
    <pre>
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./ca.crt
    ❯ docker cp openvpn-test:/etc/openvpn/server.crt ./client.crt
-   ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key   
+   ❯ docker cp openvpn-test:/etc/openvpn/server.key ./client.key
+   ❯ docker cp openvpn-test:/etc/openvpn/ta.key ./ta.key
    </pre>
 
    &nbsp;
