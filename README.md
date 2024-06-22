@@ -182,21 +182,15 @@ by Dhony Abu Muhammad
    🔹 Jalankan script.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>./init-easyrsa.sh</mark>
-      Note: using Easy-RSA configuration from: ./vars
-
       init-pki complete; you may now create a CA or requests.
       Your newly created PKI dir is: /etc/openvpn/easy-rsa/pki
 
 
-      Note: using Easy-RSA configuration from: ./vars
-
-      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
       Generating RSA private key, 2048 bit long modulus (2 primes)
-      ........+++++
-      ....................................+++++
+      .....................+++++
+      ...................................................................................................+++++
       e is 65537 (0x010001)
-      Can't load /etc/openvpn/easy-rsa/pki/.rnd into RNG
-      281473367968224:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:98:Filename=/etc/openvpn/easy-rsa/pki/.rnd
       You are about to be asked to enter information that will be incorporated
       into your certificate request.
       What you are about to enter is what is called a Distinguished Name or a DN.
@@ -210,13 +204,11 @@ by Dhony Abu Muhammad
       /etc/openvpn/easy-rsa/pki/ca.crt
 
 
-      Note: using Easy-RSA configuration from: ./vars
-
-      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
       Generating a RSA private key
-      ....................+++++
-      .......+++++
-      writing new private key to '/etc/openvpn/easy-rsa/pki/private/server.key.sXtcKOiK7S'
+      ..................................................................................+++++
+      ..............................................................................................+++++
+      writing new private key to '/etc/openvpn/easy-rsa/pki/easy-rsa-70.E47CLE/tmp.Emklql'
       -----
       You are about to be asked to enter information that will be incorporated
       into your certificate request.
@@ -225,44 +217,92 @@ by Dhony Abu Muhammad
       For some fields there will be a default value,
       If you enter '.', the field will be left blank.
       -----
-      Common Name (eg: your user, host, or server name) [server]:MY-LOCALHOST-TEST
+      Common Name (eg: your user, host, or server name) [server]:<mark>MY-LOCALHOST-TEST</mark>
 
       Keypair and certificate request completed. Your files are:
       req: /etc/openvpn/easy-rsa/pki/reqs/server.req
       key: /etc/openvpn/easy-rsa/pki/private/server.key
 
-      Note: using Easy-RSA configuration from: ./vars
 
-      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
+
 
       You are about to sign the following certificate.
       Please check over the details shown below for accuracy. Note that this request
       has not been cryptographically verified. Please be sure it came from a trusted
       source or that you have verified the request checksum with the sender.
 
-      Request subject, to be signed as a server certificate for 1080 days:
+      Request subject, to be signed as a server certificate for 825 days:
 
       subject=
-         commonName                = <mark>MY-LOCALHOST-TEST</mark>
+         commonName                = MY-LOCALHOST-TEST
+
 
       Type the word 'yes' to continue, or any other input to abort.
-      Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/safessl-easyrsa.cnf
+      Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/easy-rsa-92.ZzIM5i/tmp.2QfTIo
       Check that the request matches the signature
       Signature ok
       The Subject's Distinguished Name is as follows
       commonName            :ASN.1 12:'MY-LOCALHOST-TEST'
-      Certificate is to be certified until Jun  6 07:51:00 2027 GMT (1080 days)
+      Certificate is to be certified until Sep 25 15:20:57 2026 GMT (825 days)
 
       Write out database with 1 new entries
       Data Base Updated
 
       Certificate created at: /etc/openvpn/easy-rsa/pki/issued/server.crt
 
-      Note: using Easy-RSA configuration from: ./vars
 
-      Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
+      Generating a RSA private key
+      ............+++++
+      ...........+++++
+      writing new private key to '/etc/openvpn/easy-rsa/pki/easy-rsa-155.2gtw7F/tmp.qZnPYw'
+      -----
+      You are about to be asked to enter information that will be incorporated
+      into your certificate request.
+      What you are about to enter is what is called a Distinguished Name or a DN.
+      There are quite a few fields but you can leave some blank
+      For some fields there will be a default value,
+      If you enter '.', the field will be left blank.
+      -----
+      Common Name (eg: your user, host, or server name) [client1]:<mark>MY-LOCALHOST-TEST</mark>
+
+      Keypair and certificate request completed. Your files are:
+      req: /etc/openvpn/easy-rsa/pki/reqs/client1.req
+      key: /etc/openvpn/easy-rsa/pki/private/client1.key
+
+
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
+
+
+      You are about to sign the following certificate.
+      Please check over the details shown below for accuracy. Note that this request
+      has not been cryptographically verified. Please be sure it came from a trusted
+      source or that you have verified the request checksum with the sender.
+
+      Request subject, to be signed as a client certificate for 825 days:
+
+      subject=
+         commonName                = MY-LOCALHOST-TEST
+
+
+      Type the word 'yes' to continue, or any other input to abort.
+      Confirm request details: Using configuration from /etc/openvpn/easy-rsa/pki/easy-rsa-177.qwLezW/tmp.a2Ohfw
+      Check that the request matches the signature
+      Signature ok
+      The Subject's Distinguished Name is as follows
+      commonName            :ASN.1 12:'MY-LOCALHOST-TEST'
+      Certificate is to be certified until Sep 25 15:21:21 2026 GMT (825 days)
+
+      Write out database with 1 new entries
+      Data Base Updated
+
+      Certificate created at: /etc/openvpn/easy-rsa/pki/issued/client1.crt
+
+
+      Using SSL: openssl OpenSSL 1.1.1w  11 Sep 2023
       Generating DH parameters, 2048 bit long safe prime, generator 2
-      This is going to take a long time      
+      This is going to take a long time  
       ...........................................+....+.......+.............
       +.....................................................................
       +.....................................................................
@@ -290,26 +330,29 @@ by Dhony Abu Muhammad
       |-- init-easyrsa.sh
       |-- openssl-easyrsa.cnf
       |-- pki
-      |   |-- .rnd
       |   |-- ca.crt
       |   |-- certs_by_serial
-      |   |   `-- 3F7D22AF06E676A17433EB24C2647247.pem
+      |   |   |-- 8C0158257BA6778A502AE1B04A5B2410.pem
+      |   |   `-- A11AC78FE32A25959C80C7324D4606A0.pem
       |   |-- dh.pem
-      |   |-- extensions.temp
       |   |-- index.txt
       |   |-- index.txt.attr
+      |   |-- index.txt.attr.old
       |   |-- index.txt.old
       |   |-- issued
+      |   |   |-- client1.crt
       |   |   `-- server.crt
       |   |-- openssl-easyrsa.cnf
       |   |-- private
       |   |   |-- ca.key
+      |   |   |-- client1.key
       |   |   `-- server.key
       |   |-- renewed
       |   |   |-- certs_by_serial
       |   |   |-- private_by_serial
       |   |   `-- reqs_by_serial
       |   |-- reqs
+      |   |   |-- client1.req
       |   |   `-- server.req
       |   |-- revoked
       |   |   |-- certs_by_serial
@@ -318,11 +361,11 @@ by Dhony Abu Muhammad
       |   |-- safessl-easyrsa.cnf
       |   |-- serial
       |   `-- serial.old
-      |-- ta.key      
+      |-- ta.key
       |-- vars
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
-      14 directories, 20 files
+      14 directories, 24 files
 
    ....:/etc/openvpn/easy-rsa# <mark>tree -L 4 -a -I 'easy-rsa'  /etc/openvpn</mark>
       /etc/openvpn
@@ -375,43 +418,44 @@ by Dhony Abu Muhammad
    ....:/etc/openvpn/easy-rsa# <mark>vim /etc/openvpn/server.conf</mark>
          . . .
    </pre>
-   Before
+   test - first draft
    ```bash
-         port 1194
-         proto udp
-         dev tun
-         ca /etc/openvpn/ca.crt
-         cert /etc/openvpn/server.crt
-         key /etc/openvpn/server.key
-         dh /etc/openvpn/dh.pem
-         tls-auth /etc/openvpn/ta.key 0
-         server 10.8.0.0 255.255.255.0
-         ifconfig-pool-persist ipp.txt
-         keepalive 10 120
-         cipher AES-256-CBC
-         persist-key
-         persist-tun
-         status openvpn-status.log
-         log-append /var/log/openvpn.log
-         verb 3
+      port 1194
+      proto udp
+      dev tun
+      ca /etc/openvpn/ca.crt
+      cert /etc/openvpn/server.crt
+      key /etc/openvpn/server.key
+      dh /etc/openvpn/dh.pem
+      tls-auth /etc/openvpn/ta.key 0
+      server 10.8.0.0 255.255.255.0
+      ifconfig-pool-persist ipp.txt
+      keepalive 10 120
+      cipher AES-256-CBC
+      persist-key
+      persist-tun
+      status openvpn-status.log
+      log-append /var/log/openvpn.log
+      verb 3
    ```
-   After
+   test - second draft
    ```bash
-         port 1194
-         proto udp
-         dev tun
-         ca /etc/openvpn/ca.crt
-         cert /etc/openvpn/server.crt
-         key /etc/openvpn/server.key
-         dh /etc/openvpn/dh.pem
-         auth SHA256
-         tls-auth /etc/openvpn/ta.key 0
-         cipher AES-256-CBC
-         push "redirect-gateway def1 bypass-dhcp"
-         push "dhcp-option DNS 8.8.8.8"
-         status openvpn-status.log
-         log-append /var/log/openvpn.log
-         verb 3
+      port 1194
+      proto udp
+      dev tun
+      ca /etc/openvpn/ca.crt
+      cert /etc/openvpn/server.crt
+      key /etc/openvpn/server.key
+      dh /etc/openvpn/dh.pem
+      auth SHA256
+      tls-auth /etc/openvpn/ta.key 0
+      cipher AES-256-CBC
+      server 10.8.0.0 255.255.255.0
+      persist-key
+      persist-tun
+      status openvpn-status.log
+      log-append /var/log/openvpn.log
+      verb 3
    ```
 
    🔹 Jalankan OpenVPN Server <br />
@@ -469,8 +513,8 @@ by Dhony Abu Muhammad
    <pre>
    ❯ mkdir -p client1/file
    ❯ docker cp openvpn-test:/etc/openvpn/ca.crt ./client1/file/ca.crt
-   ❯ docker cp openvpn-test:~/client-configs/files/client1.crt ./client1/file/client.crt
-   ❯ docker cp openvpn-test:~/client-configs/files/client1.key ./client1/file/client.key
+   ❯ docker cp openvpn-test:/root/client-configs/files/client1.crt ./client1/file/client.crt
+   ❯ docker cp openvpn-test:/root/client-configs/files/client1.key ./client1/file/client.key
    ❯ docker cp openvpn-test:/etc/openvpn/ta.key ./client1/file/ta.key
    </pre>
 
@@ -507,24 +551,24 @@ by Dhony Abu Muhammad
    <pre>
    ❯ vim client.ovpn
       . . .
-      client
-      dev tun
-      proto udp
-      remote 192.168.100.225 1194
-      resolv-retry infinite
-      nobind
-      persist-key
-      persist-tun
-      remote-cert-tls server
-      auth SHA256
-      cipher AES-256-CBC
-      key-direction 1
-      verb 3
+client
+dev tun
+proto udp
+remote 192.168.100.225 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+auth SHA256
+cipher AES-256-CBC
+key-direction 1
+verb 3
 
-      ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
-      cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
-      key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
-      tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
+ca /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ca.crt
+cert /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.crt
+key /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/client.key
+tls-auth /Users/powercommerce/Documents/test/from-github-all/openVPN-docker-ubuntu-easy-rsa/client1/file/ta.key
    </pre>
 
 

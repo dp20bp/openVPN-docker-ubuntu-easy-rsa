@@ -8,7 +8,7 @@ CLIENT_NAME=client1
 # Buat CA baru tanpa password
 echo | ./easyrsa build-ca nopass
 
-# Buat server request dan tanda tangani
+#Buat server request dan sign it
 ./easyrsa gen-req server nopass
 echo yes | ./easyrsa sign-req server server
 
@@ -16,15 +16,12 @@ echo yes | ./easyrsa sign-req server server
 ./easyrsa gen-req $CLIENT_NAME nopass
 echo yes | ./easyrsa sign-req client $CLIENT_NAME
 
-# Buat direktori untuk konfigurasi client jika belum ada
 mkdir -p ~/client-configs/files
-# Copy client keys and certificates
 cp pki/issued/$CLIENT_NAME.crt pki/private/$CLIENT_NAME.key ~/client-configs/files/
 
 # Buat Diffie-Hellman parameters
 ./easyrsa gen-dh
 
 # Generate TLS-Auth key
-openvpn --genkey --secret /etc/openvpn/easy-rsa/ta.key
-# Set permissions (optional)
+openvpn --genkey secret /etc/openvpn/easy-rsa/ta.key
 chmod 600 /etc/openvpn/easy-rsa/ta.key
