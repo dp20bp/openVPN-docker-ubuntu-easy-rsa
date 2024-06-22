@@ -432,7 +432,7 @@
 
    &nbsp;
 
-6. Menyalin Sertifikat dan Kunci ke Mesin Klien ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
+6. Salin certificate dan key ke perangkat client ( dilakukan pada host / keluar jika posisi masih di dalam container ). <br />
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>exit</mark>
    </pre>
