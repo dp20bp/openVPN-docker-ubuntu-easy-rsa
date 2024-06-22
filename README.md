@@ -5,7 +5,7 @@
 ### 🏁 Langkah-langkah :
 
 1. Persiapkan file-file dan script di dalamnya sebagai berikut:
-
+   🟡 Dockerfile
    <pre>
    ❯ vim Dockerfile
       . . .
@@ -29,6 +29,7 @@
 
    &nbsp;
 
+   🟡 init-easyrsa.sh
    <pre>
    ❯ vim init-easyrsa.sh
       . . .
@@ -49,6 +50,7 @@
 
    &nbsp;
 
+   🟡 docker-compose.yml
    <pre>
    ❯ vim docker-compose.yml
       . . .
@@ -112,7 +114,6 @@
       ⠿ Container openvpn-test                                Created                                                                                                   0.0s
       Attaching to openvpn-test
    </pre>
-
    🟨 Jangan tutup terminal ini ketika container berhasil dijalankan.
 
    <div align="center">
