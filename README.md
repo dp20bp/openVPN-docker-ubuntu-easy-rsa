@@ -109,7 +109,7 @@
       ⠿ Container openvpn-test                                Created                                                                                                   0.0s
       Attaching to openvpn-test
    </pre>
-   🟨 Jangan tutup terminal ini ketika container berhasil dijalankan.
+   🟨 <mark>**Jangan tutup terminal ini ketika container berhasil dijalankan !.**</mark>
 
    <div align="center">
       <img src="./gambar-petunjuk/ss_docker_desktop_001.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
