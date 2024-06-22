@@ -77,6 +77,8 @@
    ❯ chmod +x init-easyrsa.sh
    </pre>
 
+   &nbsp;
+
 3. Build dan Run Container: <br />
    🏃🏼‍♂️ Jalankan perintah berikut untuk membangun dan menjalankan container:
    <pre>
@@ -119,6 +121,8 @@
    <div align="center">
       <img src="./gambar-petunjuk/ss_docker_desktop_002.png" alt="ss_docker_desktop" style="display: block; margin: 0 auto;">
    </div>
+
+   &nbsp;
 
 4. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
    Setelah container berjalan, Anda bisa masuk ke dalam container untuk menjalankan skrip inisialisasi:
