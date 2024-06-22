@@ -410,6 +410,7 @@
       2024-06-22 01:04:19 Initialization Sequence Completed
    </pre>
    Periksa apakah ada pesan seperti `Initialization Sequence Completed` yang menunjukkan bahwa OpenVPN telah berhasil memulai dan menyelesaikan proses inisialisasi. <br />
+   Jika menghentikan perintah `openvpn --config /etc/openvpn/server.conf`, maka akan muncul pada openvpn.log seperti `SIGINT[hard,] received, process exiting`.<br />
    🏃🏼‍♂️ Setelah menjalankan perintah di atas, pada terminal akan terus berlangsungnya peroses. <br /> 
    ⬜️ Dapat memantau hasil realtime pada `openvpn.log` selama proses openvpn ini berlangsung, atau boleh juga menutupnya.
 
