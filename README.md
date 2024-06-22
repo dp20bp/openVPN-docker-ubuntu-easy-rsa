@@ -136,13 +136,13 @@
 
    &nbsp;
 
-4. Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
+4. Masuk ke container `openvpn-test` dilakukan pada terminal baru: <br />
    Setelah container berjalan, masuk ke dalam container untuk menjalankan skrip inisialisasi:
-   🔹 Masuk ke dalam Container
+   🔹 Masuk ke dalam container
    <pre>
    ❯ docker exec -it openvpn-test bash
    </pre>
-   Periksa Isi Direktori.
+   Periksa isi direktori.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>cd /etc/openvpn/easy-rsa</mark>
 
@@ -266,6 +266,7 @@
 
       DH parameters of size 2048 created at /etc/openvpn/easy-rsa/pki/dh.pem
    </pre>
+
    Periksa kembali **perubahan** isi direktori.
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>ls -lah</mark>
@@ -344,8 +345,9 @@
 
       2 directories, 5 files   
    </pre>
+
    Periksa Sertifikat Server.<br />
-   Gunakan perintah openssl untuk memeriksa tanggal kedaluwarsa sertifikat server. Lokasi sertifikat biasanya berada di /etc/openvpn atau direktori yang Anda tentukan dalam konfigurasi.
+   Gunakan perintah openssl untuk memeriksa tanggal kedaluwarsa sertifikat server. Lokasi sertifikat biasanya berada di /etc/openvpn atau direktori yang telah tentukan dalam konfigurasi.
    <pre>
    ....:/etc/openvpn/easy-rsa# openssl x509 -in /etc/openvpn/server.crt -text -noout | grep "Not After"
          Not After : Jun  6 08:41:50 2027 GMT
@@ -355,9 +357,9 @@
    ....:/etc/openvpn/easy-rsa# openssl x509 -in /etc/openvpn/ca.crt -text -noout | grep "Not After"
          Not After : Jun 19 07:50:42 2034 GMT
    </pre>
-   Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, Anda perlu memperbarui sertifikat tersebut.
+   Tanggal ini menunjukkan sampai kapan sertifikat tersebut berlaku. Jika tanggal kedaluwarsa sudah dekat atau telah berlalu, perlu memperbarui sertifikat tersebut.
 
-   **Contoh File Konfigurasi Server OpenVPN** <br />
+   **File Konfigurasi Server OpenVPN** <br />
    Buat file konfigurasi server OpenVPN (/etc/openvpn/server.conf) jika belum ada:
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>vim /etc/openvpn/server.conf</mark>
@@ -392,7 +394,7 @@
    🟨 Jangan tutup terminal ini. <br />
    Masuk ke Container dengan membuka dan dilakukan pada terminal baru: <br />
 
-   **[ Optional ]** Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, Anda dapat melakukan beberapa langkah pengujian berikut: <br />
+   **[ Optional ]** Untuk menguji atau memastikan bahwa OpenVPN telah berjalan dengan benar di dalam container openvpn-test, lakukan beberapa langkah pengujian berikut: <br />
    Periksa Log OpenVPN
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>tail -f /var/log/openvpn.log</mark>
@@ -409,7 +411,7 @@
    </pre>
    Periksa apakah ada pesan seperti `Initialization Sequence Completed` yang menunjukkan bahwa OpenVPN telah berhasil memulai dan menyelesaikan proses inisialisasi. <br />
    🏃🏼‍♂️ Setelah menjalankan perintah di atas, pada terminal akan terus berlangsungnya peroses. <br /> 
-   ⬜️ Anda dapat memantau hasil realtime pada `openvpn.log` selama proses openvpn ini berlangsung, atau boleh juga menutupnya.
+   ⬜️ Dapat memantau hasil realtime pada `openvpn.log` selama proses openvpn ini berlangsung, atau boleh juga menutupnya.
 
    &nbsp;
 
@@ -417,7 +419,7 @@
    <pre>
    ....:/etc/openvpn/easy-rsa# <mark>netstat -tuln | grep 1194</mark>
    </pre>
-   Anda harus melihat sesuatu seperti ini:
+   Harus melihat sesuatu seperti ini:
    <pre>
    Active Internet connections (only servers)
    Proto Recv-Q Send-Q Local Address           Foreign Address         State      
@@ -441,7 +443,7 @@
    &nbsp;
 
 7. Persiapkan File Konfigurasi Client. <br />
-   Pastikan Anda memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
+   Pastikan telah memiliki file konfigurasi client OpenVPN (`client.ovpn`). File ini biasanya berisi informasi seperti alamat server, port, path ke sertifikat, dan konfigurasi lainnya. Contoh isi dari client.ovpn bisa seperti ini:
    <pre>
    ❯ vim client.ovpn
       . . .
