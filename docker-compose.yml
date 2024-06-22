@@ -20,6 +20,8 @@ services:
     container_name: openvpn-test
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun      
     ports:
       - "1194:1194/udp"
     stdin_open: true

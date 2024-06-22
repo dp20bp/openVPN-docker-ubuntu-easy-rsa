@@ -1,0 +1,87 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            30:ec:2c:bf:35:09:9c:16:7f:93:4a:82:f3:a6:ce:0c
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=Easy-RSA CA
+        Validity
+            Not Before: Jun 22 01:02:16 2024 GMT
+            Not After : Sep 25 01:02:16 2026 GMT
+        Subject: CN=perangkat-macbook-saya
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:99:a2:34:0c:30:f3:91:df:ab:05:cb:30:99:e0:
+                    0b:9a:46:e6:c6:6d:03:cb:a1:8a:da:5f:30:fb:ff:
+                    8b:6b:ac:52:82:99:e6:6c:89:88:f3:7b:ac:fb:10:
+                    ab:47:26:52:10:4f:57:2d:a7:00:9c:1f:6f:ec:92:
+                    a1:eb:21:65:c0:81:47:77:14:15:6b:56:b8:1c:ca:
+                    32:d2:2e:57:54:66:a5:05:e5:59:81:ca:d9:98:e6:
+                    52:83:40:e3:97:48:05:e6:9d:58:56:a1:73:6f:48:
+                    1c:3e:94:e3:0f:39:3b:68:20:f3:26:48:91:7b:39:
+                    35:09:cb:7a:83:3d:6e:e9:e6:d7:9d:15:ac:26:4e:
+                    52:aa:ec:9a:bc:f8:9a:6f:ec:99:70:c5:7a:22:5b:
+                    0b:2d:e3:84:bf:54:da:57:60:db:64:d9:64:bb:0d:
+                    e7:94:02:dd:3f:5b:8c:45:7f:5d:c4:9f:72:47:c2:
+                    d2:f3:d5:09:f6:6c:60:5d:94:df:4e:f4:69:b2:80:
+                    db:a1:5f:b8:80:91:f4:75:e7:9e:6e:e6:23:be:6c:
+                    a6:38:f5:a7:ed:38:c8:0f:dd:69:5c:b6:b7:11:f5:
+                    75:c8:08:ae:6c:60:a0:c1:0e:01:74:d8:63:d3:13:
+                    f5:8f:77:56:23:61:7a:12:8e:b5:bc:bb:6d:69:73:
+                    f5:13
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                26:39:4E:CE:1F:0C:43:38:6F:84:E8:5F:97:4A:15:99:A9:DA:6B:40
+            X509v3 Authority Key Identifier: 
+                keyid:3D:0B:83:5A:47:DD:3A:F7:74:3B:A7:74:CD:DC:22:CC:F4:04:8D:FD
+                DirName:/CN=Easy-RSA CA
+                serial:27:B7:95:18:B9:6C:8A:8E:1B:54:6F:33:6C:7B:EF:2B:39:57:54:D9
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:perangkat-macbook-saya
+    Signature Algorithm: sha256WithRSAEncryption
+         35:f9:fe:95:53:d9:5c:2d:d5:2b:16:9a:9d:fa:80:38:47:76:
+         52:2c:7f:5b:1c:9d:e8:a6:16:6c:60:15:c6:3b:0a:76:1a:8d:
+         88:b9:79:2b:40:4d:5e:6a:48:7a:00:87:98:80:14:35:1f:57:
+         ee:d6:30:fc:b5:19:61:dd:61:aa:80:51:8e:f4:8d:cf:38:be:
+         cb:b4:54:a4:e9:8f:14:30:be:a0:62:ef:40:78:f5:39:7c:01:
+         62:56:78:5e:ab:0e:96:4b:48:2b:3b:e2:9b:b5:be:92:ba:14:
+         e3:d3:8d:cb:1f:2f:5e:f9:ec:64:d8:21:eb:0c:70:cf:b3:e1:
+         a4:93:ad:45:ce:50:12:a8:e1:42:3a:d0:f1:d0:b8:d0:37:5d:
+         81:92:24:f8:64:bb:aa:e7:35:bf:5c:0c:a9:87:b3:fd:34:6a:
+         3a:b1:07:81:27:c1:5a:d9:12:9d:97:90:04:22:df:ef:2b:ea:
+         9b:d6:1f:02:44:e5:37:10:63:5b:c2:8a:5d:85:a8:91:d6:0c:
+         d5:5e:29:52:79:48:2f:cc:b5:b1:81:b4:d5:00:79:82:4e:d4:
+         09:a7:a6:7b:f4:d9:c5:65:86:ee:e3:17:66:63:b5:5d:9d:d8:
+         52:b4:d6:b2:46:b8:3e:e0:a7:79:ee:29:65:19:71:a0:72:bf:
+         4a:67:78:cc
+-----BEGIN CERTIFICATE-----
+MIIDhzCCAm+gAwIBAgIQMOwsvzUJnBZ/k0qC86bODDANBgkqhkiG9w0BAQsFADAW
+MRQwEgYDVQQDDAtFYXN5LVJTQSBDQTAeFw0yNDA2MjIwMTAyMTZaFw0yNjA5MjUw
+MTAyMTZaMCExHzAdBgNVBAMMFnBlcmFuZ2thdC1tYWNib29rLXNheWEwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCZojQMMPOR36sFyzCZ4AuaRubGbQPL
+oYraXzD7/4trrFKCmeZsiYjze6z7EKtHJlIQT1ctpwCcH2/skqHrIWXAgUd3FBVr
+VrgcyjLSLldUZqUF5VmBytmY5lKDQOOXSAXmnVhWoXNvSBw+lOMPOTtoIPMmSJF7
+OTUJy3qDPW7p5tedFawmTlKq7Jq8+Jpv7JlwxXoiWwst44S/VNpXYNtk2WS7DeeU
+At0/W4xFf13En3JHwtLz1Qn2bGBdlN9O9GmygNuhX7iAkfR1555u5iO+bKY49aft
+OMgP3WlctrcR9XXICK5sYKDBDgF02GPTE/WPd1YjYXoSjrW8u21pc/UTAgMBAAGj
+gcUwgcIwCQYDVR0TBAIwADAdBgNVHQ4EFgQUJjlOzh8MQzhvhOhfl0oVmanaa0Aw
+UQYDVR0jBEowSIAUPQuDWkfdOvd0O6d0zdwizPQEjf2hGqQYMBYxFDASBgNVBAMM
+C0Vhc3ktUlNBIENBghQnt5UYuWyKjhtUbzNse+8rOVdU2TATBgNVHSUEDDAKBggr
+BgEFBQcDATALBgNVHQ8EBAMCBaAwIQYDVR0RBBowGIIWcGVyYW5na2F0LW1hY2Jv
+b2stc2F5YTANBgkqhkiG9w0BAQsFAAOCAQEANfn+lVPZXC3VKxaanfqAOEd2Uix/
+Wxyd6KYWbGAVxjsKdhqNiLl5K0BNXmpIegCHmIAUNR9X7tYw/LUZYd1hqoBRjvSN
+zzi+y7RUpOmPFDC+oGLvQHj1OXwBYlZ4XqsOlktIKzvim7W+kroU49ONyx8vXvns
+ZNgh6wxwz7PhpJOtRc5QEqjhQjrQ8dC40DddgZIk+GS7quc1v1wMqYez/TRqOrEH
+gSfBWtkSnZeQBCLf7yvqm9YfAkTlNxBjW8KKXYWokdYM1V4pUnlIL8y1sYG01QB5
+gk7UCaeme/TZxWWG7uMXZmO1XZ3YUrTWska4PuCnee4pZRlxoHK/Smd4zA==
+-----END CERTIFICATE-----
