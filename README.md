@@ -26,9 +26,6 @@
 
       CMD ["bash"]
    </pre>
-
-   &nbsp;
-
    🟡 init-easyrsa.sh
    <pre>
    ❯ vim init-easyrsa.sh
@@ -47,9 +44,6 @@
       # Buat Diffie-Hellman parameters
       ./easyrsa gen-dh
    </pre>
-
-   &nbsp;
-
    🟡 docker-compose.yml
    <pre>
    ❯ vim docker-compose.yml
