@@ -316,7 +316,8 @@
       |   |   `-- reqs_by_serial
       |   |-- safessl-easyrsa.cnf
       |   |-- serial
-      |   `-- serial.old
+      |   |-- serial.old
+      |   `-- ta.key      
       |-- vars
       `-- x509-types -> /usr/share/easy-rsa/x509-types
 
